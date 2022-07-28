@@ -1,0 +1,28 @@
+site_name: Portfólio de Pedro Lima
+site_url: https://peuvitor.github.io
+
+theme:
+  logo: images/monitor.png
+  language: pt
+  name: material
+  palette:
+    scheme: slate
+    primary: indigo
+    accent: indigo
+  features:
+    - navigation.tracking
+    - navigation.sections
+    - navigation.indexes
+    - navigation.top
+
+markdown_extensions:
+  - pymdownx.emoji
+
+nav:
+  - Sobre mim: index.md
+  - Projetos:
+    - projects/index.md
+    - Projeto 1: projects/projeto1.md
+
+
+
