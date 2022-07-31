@@ -1,3 +1,8 @@
+---
+hide:
+  - navigation
+---
+
 # Sobre mim
 
 - engenheiro de dados júnior

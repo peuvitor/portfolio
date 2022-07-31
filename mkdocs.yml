@@ -14,15 +14,27 @@ theme:
     - navigation.sections
     - navigation.indexes
     - navigation.top
+    - navigation.tabs
+    - navigation.tabs.sticky
 
 markdown_extensions:
   - pymdownx.emoji
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - toc:
+      title: Nesta página
 
 nav:
   - Sobre mim: index.md
-  - Projetos:
-    - projects/index.md
-    - Projeto 1: projects/projeto1.md
+  - Projetos - Engenharia de Dados:
+    - projects-de/index.md
+    - ETL AWS: projects-de/etl-aws.md
+  - Projetos - Ciência de Dados:
+    - projects-ds/index.md
+    - Detecção de fraude: projects-ds/fraud-detection.md
 
 
 
