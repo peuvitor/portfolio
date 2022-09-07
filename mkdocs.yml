@@ -33,6 +33,7 @@ nav:
     - projects/index.md
     - Engenharia de dados:
       - EL na AWS: projects/de/etl-aws.md
+      - Raspagem de dados do LinkedIn: projects/de/scraping-jobs.md
     - Ciência de Dados:
       - Detecção de fraude: projects/ds/fraud-detection.md
 
