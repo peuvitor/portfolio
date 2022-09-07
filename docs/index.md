@@ -10,7 +10,7 @@ hide:
 - engenheiro de dados
 - mestrando em engenharia biomédica, aplicando inteligência artificial no diagnóstico de doenças de pele
 - proficiente em português, inglês e francês
-- veja alguns dos meus [projetos](./projects/index.md) de engenharia de dados e ciência de dados
+- veja alguns dos meus [projetos](./projects/index.md)
 
 [![LinkedIn](https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/pedro-vitorlima/) [![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.com/peuvitor)
 
