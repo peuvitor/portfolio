@@ -17,7 +17,7 @@ E este é o foco principal do projeto: entender cada variável disponibilizada n
 
 A base de dados escolhida contém diversas informações sobre pedidos de indenização de uma seguradora de veículos. As informações se referem à pessoa envolvida em um acidente, à apólice contratada, ao titular da apólice, ao veículo envolvido, etc. Originalmente são 15420 registros, onde o atributo 'FraudFound_P' indica se uma determinada solicitação foi ou não identificada como fraudulenta.
 
-Disponível em: https://www.kaggle.com/datasets/shivamb/vehicle-claim-fraud-detection
+ [Mais informações](https://www.kaggle.com/datasets/shivamb/vehicle-claim-fraud-detection).
 
 ## PARTE 1: Importar bibliotecas
 

@@ -1,0 +1,1032 @@
+
+<!doctype html>
+<html lang="pt" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.3.9">
+    
+    
+      
+        <title>Desenvolvimento de aplicativo no MATLAB - Portfólio de Pedro Lima</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.1d29e8d0.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.cbb835fc.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#4051b5">
+        
+      
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#desenvolvimento-de-aplicativo-no-matlab-para-projetos-com-controladores-repetitivos" class="md-skip">
+          Ir para o conteúdo
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
+    <a href="../../.." title="Portfólio de Pedro Lima" class="md-header__button md-logo" aria-label="Portfólio de Pedro Lima" data-md-component="logo">
+      
+  <img src="../../../images/monitor.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Portfólio de Pedro Lima
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Desenvolvimento de aplicativo no MATLAB
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Buscar" placeholder="Buscar" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Pesquisar">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Limpar" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando a pesquisa
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Abas" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../.." class="md-tabs__link">
+      Sobre mim
+    </a>
+  </li>
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../" class="md-tabs__link md-tabs__link--active">
+        Projetos
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegação" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Portfólio de Pedro Lima" class="md-nav__button md-logo" aria-label="Portfólio de Pedro Lima" data-md-component="logo">
+      
+  <img src="../../../images/monitor.png" alt="logo">
+
+    </a>
+    Portfólio de Pedro Lima
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Sobre mim
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../">Projetos</a>
+          
+            <label for="__nav_2">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Projetos" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Projetos
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_2">
+          Engenharia de dados
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Engenharia de dados" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          Engenharia de dados
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../de/etl-aws/" class="md-nav__link">
+        EL na AWS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../de/scraping-jobs/" class="md-nav__link">
+        Raspagem de dados do LinkedIn
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../de/modelagem-bd/" class="md-nav__link">
+        Modelagem de banco de dados
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" type="checkbox" id="__nav_2_3" >
+      
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_3">
+          Ciência de Dados
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Ciência de Dados" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          Ciência de Dados
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ds/fraud-detection/" class="md-nav__link">
+        Detecção de fraude
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4" type="checkbox" id="__nav_2_4" checked>
+      
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_4">
+          Diversos
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Diversos" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_4">
+          <span class="md-nav__icon md-icon"></span>
+          Diversos
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Desenvolvimento de aplicativo no MATLAB
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Desenvolvimento de aplicativo no MATLAB
+      </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="Nesta página">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Nesta página
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#compatibilidade-entre-versoes" class="md-nav__link">
+    Compatibilidade entre versões
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#funcionamento" class="md-nav__link">
+    Funcionamento
+  </a>
+  
+    <nav class="md-nav" aria-label="Funcionamento">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#janela-inicial" class="md-nav__link">
+    Janela inicial
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#analise-de-estabilidade" class="md-nav__link">
+    Análise de estabilidade
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dimensionamento-do-filtro" class="md-nav__link">
+    Dimensionamento do filtro
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#desenvolvimento" class="md-nav__link">
+    Desenvolvimento
+  </a>
+  
+    <nav class="md-nav" aria-label="Desenvolvimento">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#estrutura" class="md-nav__link">
+    Estrutura
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#compartilhamento-de-dados-entre-arquivos" class="md-nav__link">
+    Compartilhamento de dados entre arquivos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#grafico-de-estabilidade" class="md-nav__link">
+    Gráfico de estabilidade
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#algoritmo-de-dimensionamento-do-filtro-ideal" class="md-nav__link">
+    Algoritmo de dimensionamento do filtro ideal
+  </a>
+  
+    <nav class="md-nav" aria-label="Algoritmo de dimensionamento do filtro ideal">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fluxograma-correspondente-ao-algoritmo" class="md-nav__link">
+    Fluxograma correspondente ao algoritmo
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="Nesta página">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Nesta página
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#compatibilidade-entre-versoes" class="md-nav__link">
+    Compatibilidade entre versões
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#funcionamento" class="md-nav__link">
+    Funcionamento
+  </a>
+  
+    <nav class="md-nav" aria-label="Funcionamento">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#janela-inicial" class="md-nav__link">
+    Janela inicial
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#analise-de-estabilidade" class="md-nav__link">
+    Análise de estabilidade
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dimensionamento-do-filtro" class="md-nav__link">
+    Dimensionamento do filtro
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#desenvolvimento" class="md-nav__link">
+    Desenvolvimento
+  </a>
+  
+    <nav class="md-nav" aria-label="Desenvolvimento">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#estrutura" class="md-nav__link">
+    Estrutura
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#compartilhamento-de-dados-entre-arquivos" class="md-nav__link">
+    Compartilhamento de dados entre arquivos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#grafico-de-estabilidade" class="md-nav__link">
+    Gráfico de estabilidade
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#algoritmo-de-dimensionamento-do-filtro-ideal" class="md-nav__link">
+    Algoritmo de dimensionamento do filtro ideal
+  </a>
+  
+    <nav class="md-nav" aria-label="Algoritmo de dimensionamento do filtro ideal">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fluxograma-correspondente-ao-algoritmo" class="md-nav__link">
+    Fluxograma correspondente ao algoritmo
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<h1 id="desenvolvimento-de-aplicativo-no-matlab-para-projetos-com-controladores-repetitivos">Desenvolvimento de aplicativo no MATLAB para projetos com controladores repetitivos</h1>
+<p>O aplicativo foi construído no Trabalho de Conclusão de Curso de Engenharia de Controle e Automação, da Universidade Federal de Pernambuco. O controlador repetitivo utilizado como base do aplicativo é proposto na tese de doutorado de <a href="https://scholar.google.com/citations?hl=pt-BR&amp;user=BPnQFyUAAAAJ">Rafael Cavalcanti Neto</a>. </p>
+<p>No <a href="https://github.com/peuvitor/repetitive-controller-designer">repositório</a> é possível ter acesso tanto aos scripts desenvolvidos, quanto aos documentos de referência. O aplicativo também está <a href="https://www.mathworks.com/matlabcentral/fileexchange/74759-repetitive-controller-designer">disponível no site oficial da MathWorks</a>.</p>
+<h2 id="compatibilidade-entre-versoes">Compatibilidade entre versões</h2>
+<p>Criado com a versão R2016a, compatível com qualquer versão</p>
+<h2 id="funcionamento">Funcionamento</h2>
+<h3 id="janela-inicial">Janela inicial</h3>
+<p>Nesta etapa define-se a planta a ser controlada. Em (1), é ilustrado o diagrama de blocos de um sistema genérico que utiliza o controlador repetitivo. O primeiro passo para o usuário é definir o ganho em (2) e qual a planta a ser trabalhada. </p>
+<p>Para a planta, duas abordagens são possíveis: digitar manualmente os parâmetros da planta (3) ou escolher uma variável já definida no workspace do MATLAB (4). Apenas após o botão OK (5) ser pressionado, os dois botões presentes em (6) são habilitados, permitindo ao usuário a análise de estabilidade do sistema (botão System Stability) ou o dimenionamento de um filtro ideal (botão Filter Design). Apertar o botão em (7) abre uma página onde é possível encontrar informações a respeito da criação da ferramenta e um pequeno resumo de seu funcionamento.</p>
+<p><img alt="" src="https://github.com/peuvitor/repetitive-controller-designer/blob/master/images/main.PNG?raw=true" /></p>
+<h3 id="analise-de-estabilidade">Análise de estabilidade</h3>
+<p>Apertar o botão 'System Stability' na janela inicial possibilita a observação do impacto da alteração dos parâmetros do controlador na estabilidade do sistema. A estabilidade é garantida quando o diagrama de Nyquist da planta escolhida está completamente contido no domínio de estabilidade do controlador.</p>
+<p>São dadas duas possibilidades ao usuário para observar a influência desses dois parâmetros (1). É possível ou variar o valor dos parâmetros com a ajuda de sliders ou definir livremente valores reais. O impacto dessas variações é imediatamente observado no gráfico ao lado (3), onde, além do domínio de estabilidade em verde, também é mostrado o diagrama de Nyquist da planta em cinza e, em vermelho, a frequência limite até onde o diagrama de Nyquist pertence ao domínio de estabilidade do sistema. Esta frequência é mostrada em (2), além de também mostrar se, com tal configuração, o sistema é estável ou não.</p>
+<p>Caso alguma configuração seja útil ao usuário, em (4) é possível fazer uma captura de tal gráfico e escolher o local onde se deseja salvar a imagem gerada. São também disponibilizados alguns recursos do próprio MATLAB para que o usuário possa analisar o gráfico gerado (5), como aplicar ou remover zoom, ver os valores em determinados pontos das curvas e realizar translação do gráfico. Ainda, em (6), é possível ajustar os parâmetros dos sliders (passo e limites máximo e mínimo) e das caixas de textos disponíveis para escolha dos valores (resolução para arredondamento), e também configurar os limites mínimos e máximos dos eixos do gráfico.</p>
+<p><img alt="" src="https://github.com/peuvitor/repetitive-controller-designer/blob/master/images/controlador.PNG?raw=true" /></p>
+<p><img alt="" src="https://github.com/peuvitor/repetitive-controller-designer/blob/master/images/controlador_config.png?raw=true" /></p>
+<p><img alt="" src="https://github.com/peuvitor/repetitive-controller-designer/blob/master/images/controlador_config_param.PNG?raw=true" /></p>
+<p><img alt="" src="https://github.com/peuvitor/repetitive-controller-designer/blob/master/images/controlador_config_plot.PNG?raw=true" /></p>
+<h3 id="dimensionamento-do-filtro">Dimensionamento do filtro</h3>
+<p>Apertar o botão 'Filter Design' na janela inicial possibilita a execução de um algoritmo que retorna um filtro ideal para o sistema, de acordo com os parâmetros escolhidos inicialmente. A curva deste filtro indica uma magnitude máxima para uma dada frequência. Assim, ao exportar os dados gerados, o usuário pode projetar qualquer outro filtro que respeite esses limites.</p>
+<p>Para executar o algoritmo (1), é requerido a definição de alguns valores. A curva resultante do algoritmo é apresentada em (2) e se refere ao comportamento do filtro ideal a ser utilizado em tal aplicação. Em (3), são mostradas a ordem e a frequência de corte correspondentes. Por fim, ainda é possível extrair os pontos que geraram o gráfico, além dos valores de ordem e frequência de corte do filtro, ao clicar no botão 'Export data to workspace...' (4).</p>
+<p><img alt="" src="https://github.com/peuvitor/repetitive-controller-designer/blob/master/images/filtro.PNG?raw=true" /></p>
+<h2 id="desenvolvimento">Desenvolvimento</h2>
+<p>A ferramenta engloba uma grande quantidade de arquivos, os quais possuem várias linhas de código, referentes à configuração dos objetos presentes nas figuras e também aos algoritmos desenvolvidos. Anteriormente todos os arquivos já foram disponibilizados e abaixo segue como a ferramenta está estruturada. Por isso, adiante são apresentados apenas alguns tópicos que são pontos chaves da aplicação e necessitaram de uma atenção especial.</p>
+<h3 id="estrutura">Estrutura</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>code_files/
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>│   
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>└───main: primeira janela, onde é definida a planta a ser controlada
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>│    └───about: janela que contêm informações sobre a ferramenta
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>│
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>└───controlador: janela da análise de estabilidade em função dos parâmetros do controlador
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>│   └───config_plot_control: janela de configuração dos eixos do gráfico
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>│   │
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>│   └───config_slider: janela de configuração dos parâmetros dos sliders
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>│   │
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>│   └───controlador_salvar: rotina que salva uma captura do gráfico
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>│   │
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>│   └───plotar: rotina de criação do gráfico (domínio de estabilidade em conjunto com diagrama de Nyquist)
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>│   
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>└───filtro: janela do dimensionamento de um filtro ideal
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>│   
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>└───inequacao: implementação da inequação referente ao controlador repetitivo
+</code></pre></div>
+<h3 id="compartilhamento-de-dados-entre-arquivos">Compartilhamento de dados entre arquivos</h3>
+<p>Sabendo da estrutura da ferramenta, por vezes uma informação adquirida em uma seção é necessária em uma outra. Por exemplo, a planta que se deseja controlar é definida logo na primeira janela do aplicativo, mas é necessária em todas as outras. A estratégia utilizada para compartilhar dados foi a de associar dados a um componente específico usando a função 'setappdata', onde mais tarde é possível acessá-los usando a função 'getappdata'.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c">% Em main.m é criada uma estrutura que armazenará os dados da planta escolhida</span><span class="w"></span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="n">data</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">struct</span><span class="p">(</span><span class="s">&#39;ganho&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;num&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">[],</span><span class="w"> </span><span class="s">&#39;den&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">[],</span><span class="w"> </span><span class="s">&#39;ts&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="c">% Associa-se a estrutura criada à figura que compõe a janela principal (fig_main),  </span><span class="w"></span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="c">% onde &#39;PlantData&#39; é o nome identificador escolhido</span><span class="w"></span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">    </span><span class="nb">setappdata</span><span class="p">(</span><span class="n">handles</span><span class="p">.</span><span class="n">fig_main</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;PlantData&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="c">%%%%%</span><span class="w"></span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="c">% Ainda em main.m, após a definição da planta, os valores de &#39;ganho&#39;, &#39;num&#39;, &#39;den&#39; e &#39;ts&#39; definidos </span><span class="w"></span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="c">% pelo usuário são salvos na estrutura criada</span><span class="w"></span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="c">%%%%%</span><span class="w"></span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="c">% Primeiro recupera-se os dados salvos no objeto fig_main com nome &#39;PlantData&#39;</span><span class="w"></span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">    </span><span class="n">PlantData</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">getappdata</span><span class="p">(</span><span class="n">handles</span><span class="p">.</span><span class="n">fig_main</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;PlantData&#39;</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="c">% Salva por cima os dados que foram obtidos através do usuário</span><span class="w"></span>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">    </span><span class="n">PlantData</span><span class="p">.</span><span class="n">ganho</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">ganho</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">    </span><span class="n">PlantData</span><span class="p">.</span><span class="n">num</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">num</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="w">    </span><span class="n">PlantData</span><span class="p">.</span><span class="n">den</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">den</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="w">    </span><span class="n">PlantData</span><span class="p">.</span><span class="n">ts</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">ts</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="c">% Armazena o conteúdo no objeto fig_main com nome &#39;PlantData&#39;</span><span class="w"></span>
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="w">    </span><span class="nb">setappdata</span><span class="p">(</span><span class="n">handles</span><span class="p">.</span><span class="n">fig_main</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;PlantData&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">PlantData</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="c">%%%%%</span><span class="w"></span>
+<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="c">% Agora, os parâmetros da planta são acessíveis em qualquer arquivo, desde que as propriedades da figura </span><span class="w"></span>
+<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a><span class="c">% que compõem a janela principal (fig_main) sejam carregadas. Segue script utilizado em filtro.m, onde é </span><span class="w"></span>
+<a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a><span class="c">% necessário conhecer os dados da planta para executar o seu algoritmo</span><span class="w"></span>
+<a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a><span class="c">%%%%%</span><span class="w"></span>
+<a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a><span class="c">% Localiza-se objeto de nome &#39;fig_main&#39; e recupera-se os seus dados</span><span class="w"></span>
+<a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a><span class="w">    </span><span class="n">GUI</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">findobj</span><span class="p">(</span><span class="nb">allchild</span><span class="p">(</span><span class="nb">groot</span><span class="p">),</span><span class="w"> </span><span class="s">&#39;flat&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;Tag&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;fig_main&#39;</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a><span class="w">    </span><span class="n">handlesGUI</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">guidata</span><span class="p">(</span><span class="n">GUI</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a><span class="c">% Salva os parâmetros da planta em outras variáveis para que se possa usar ao longo do algoritmo</span><span class="w"></span>
+<a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a><span class="w">    </span><span class="n">PlantData</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">getappdata</span><span class="p">(</span><span class="n">handlesGUI</span><span class="p">.</span><span class="n">fig_main</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;PlantData&#39;</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a><span class="w">    </span><span class="n">ganho</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">PlantData</span><span class="p">.</span><span class="n">ganho</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a><span class="w">    </span><span class="n">num</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">PlantData</span><span class="p">.</span><span class="n">num</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a><span class="w">    </span><span class="n">den</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">PlantData</span><span class="p">.</span><span class="n">den</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-1-32" name="__codelineno-1-32" href="#__codelineno-1-32"></a><span class="w">    </span><span class="n">ts</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">PlantData</span><span class="p">.</span><span class="n">ts</span><span class="p">;</span><span class="w"></span>
+</code></pre></div>
+<h3 id="grafico-de-estabilidade">Gráfico de estabilidade</h3>
+<p>O gráfico de estabilidade é a composição do domínio de estabilidade do controlador com o diagrama de Nyquist da planta, além de apresentar até que frequência o diagrama está contido no domínio de estabilidade.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c">% Em controlador.m são obtidos os valores dos parâmetros &#39;a&#39; e &#39;Q&#39;, seja por meio dos sliders ou por meio </span><span class="w"></span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="c">% das caixas de texto. Com isso, a função &#39;plotar&#39; é chamada para gerar o gráfico do diagrama de Nyquist </span><span class="w"></span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="c">% em conjunto com a região de estabilidade do controlador</span><span class="w"></span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="k">function</span><span class="w"> </span><span class="nf">plotar</span><span class="p">(</span>a_value, q_value, handles, salvar<span class="p">)</span><span class="w"></span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="c">% Localiza-se objeto de nome &#39;fig_main&#39; e recupera-se os seus dados</span><span class="w"></span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">    </span><span class="n">GUI1</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">findobj</span><span class="p">(</span><span class="nb">allchild</span><span class="p">(</span><span class="nb">groot</span><span class="p">),</span><span class="w"> </span><span class="s">&#39;flat&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;Tag&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;fig_main&#39;</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">    </span><span class="n">handlesGUI1</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">guidata</span><span class="p">(</span><span class="n">GUI1</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="c">% Dados enviados quando a função foi chamada</span><span class="w"></span>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">    </span><span class="n">a</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">a_value</span><span class="p">;</span><span class="w"> </span>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">    </span><span class="n">q</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">q_value</span><span class="p">;</span><span class="w"> </span>
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="c">% Recupera dados referentes ao diagrama de Nyquist a partir do compartilhamento de dados entre arquivos</span><span class="w"></span>
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="w">    </span><span class="n">NyquistData</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">getappdata</span><span class="p">(</span><span class="n">handlesGUI1</span><span class="p">.</span><span class="n">fig_main</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;NyquistData&#39;</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="w">    </span><span class="n">re</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">NyquistData</span><span class="p">.</span><span class="n">real</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="w">    </span><span class="n">im</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">NyquistData</span><span class="p">.</span><span class="n">imag</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="w">    </span><span class="n">freq</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">NyquistData</span><span class="p">.</span><span class="n">freq</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a>
+<a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a><span class="c">% Definição dos limites do gráfico a partir das configurações definidas em config_plot_control.m</span><span class="w"></span>
+<a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a><span class="w">    </span><span class="n">lim_x</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">get</span><span class="p">(</span><span class="n">handles</span><span class="p">.</span><span class="n">plot_estabilidade</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;XLim&#39;</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a><span class="w">    </span><span class="n">lim_y</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">get</span><span class="p">(</span><span class="n">handles</span><span class="p">.</span><span class="n">plot_estabilidade</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;YLim&#39;</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a><span class="w">    </span><span class="n">r</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">min</span><span class="p">(</span><span class="n">lim_x</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="n">lim_y</span><span class="p">(</span><span class="mi">1</span><span class="p">)):</span><span class="mf">0.01</span><span class="p">:</span><span class="nb">max</span><span class="p">(</span><span class="n">lim_x</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span><span class="w"> </span><span class="n">lim_y</span><span class="p">(</span><span class="mi">2</span><span class="p">));</span><span class="w"></span>
+<a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a><span class="w">    </span><span class="p">[</span><span class="n">X</span><span class="p">,</span><span class="w"> </span><span class="n">Y</span><span class="p">]</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">meshgrid</span><span class="p">(</span><span class="n">r</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a>
+<a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a><span class="c">% Definição da região de estabilidade</span><span class="w"></span>
+<a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a><span class="w">    </span><span class="n">a</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">real</span><span class="p">(</span><span class="n">a</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-2-29" name="__codelineno-2-29" href="#__codelineno-2-29"></a><span class="w">    </span><span class="n">q</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">abs</span><span class="p">(</span><span class="n">q</span><span class="p">)</span>^<span class="mi">2</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-2-30" name="__codelineno-2-30" href="#__codelineno-2-30"></a><span class="w">    </span><span class="nb">cond</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">inequacao</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">q</span><span class="p">,</span><span class="w"> </span><span class="n">X</span><span class="p">,</span><span class="w"> </span><span class="n">Y</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-2-31" name="__codelineno-2-31" href="#__codelineno-2-31"></a>
+<a id="__codelineno-2-32" name="__codelineno-2-32" href="#__codelineno-2-32"></a><span class="c">% Rotina para descobrir até onde o diagrama de Nyquist pertence ao domínio de estabilidade. </span><span class="w"></span>
+<a id="__codelineno-2-33" name="__codelineno-2-33" href="#__codelineno-2-33"></a><span class="c">% No final, os vetores &#39;re_stable&#39;, &#39;im_stable&#39; e &#39;last_w&#39; contêm este limite</span><span class="w"></span>
+<a id="__codelineno-2-34" name="__codelineno-2-34" href="#__codelineno-2-34"></a><span class="w">    </span><span class="n">re_stable</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="n">re</span><span class="p">(</span><span class="mi">1</span><span class="p">)];</span><span class="w"></span>
+<a id="__codelineno-2-35" name="__codelineno-2-35" href="#__codelineno-2-35"></a><span class="w">    </span><span class="n">im_stable</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="n">im</span><span class="p">(</span><span class="mi">1</span><span class="p">)];</span><span class="w"></span>
+<a id="__codelineno-2-36" name="__codelineno-2-36" href="#__codelineno-2-36"></a><span class="w">    </span><span class="n">last_w</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="n">freq</span><span class="p">(</span><span class="mi">1</span><span class="p">)];</span><span class="w"></span>
+<a id="__codelineno-2-37" name="__codelineno-2-37" href="#__codelineno-2-37"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="nb">i</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">2</span><span class="p">:</span><span class="mi">1</span><span class="p">:</span><span class="nb">length</span><span class="p">(</span><span class="n">freq</span><span class="p">)</span><span class="w"></span>
+<a id="__codelineno-2-38" name="__codelineno-2-38" href="#__codelineno-2-38"></a><span class="w">        </span><span class="nb">cond</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">inequacao</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">q</span><span class="p">,</span><span class="w"> </span><span class="n">re</span><span class="p">(</span><span class="nb">i</span><span class="p">),</span><span class="w"> </span><span class="n">im</span><span class="p">(</span><span class="nb">i</span><span class="p">));</span><span class="w"></span>
+<a id="__codelineno-2-39" name="__codelineno-2-39" href="#__codelineno-2-39"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="nb">cond</span><span class="w"></span>
+<a id="__codelineno-2-40" name="__codelineno-2-40" href="#__codelineno-2-40"></a><span class="w">            </span><span class="n">re_stable</span><span class="p">(</span><span class="nb">i</span><span class="p">)</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">re</span><span class="p">(</span><span class="nb">i</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-2-41" name="__codelineno-2-41" href="#__codelineno-2-41"></a><span class="w">            </span><span class="n">im_stable</span><span class="p">(</span><span class="nb">i</span><span class="p">)</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">im</span><span class="p">(</span><span class="nb">i</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-2-42" name="__codelineno-2-42" href="#__codelineno-2-42"></a><span class="w">            </span><span class="n">last_w</span><span class="p">(</span><span class="nb">i</span><span class="p">)</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">freq</span><span class="p">(</span><span class="nb">i</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-2-43" name="__codelineno-2-43" href="#__codelineno-2-43"></a><span class="w">        </span><span class="k">else</span><span class="w">   </span>
+<a id="__codelineno-2-44" name="__codelineno-2-44" href="#__codelineno-2-44"></a><span class="w">            </span><span class="k">break</span><span class="w"></span>
+<a id="__codelineno-2-45" name="__codelineno-2-45" href="#__codelineno-2-45"></a><span class="w">        </span><span class="k">end</span><span class="w">    </span>
+<a id="__codelineno-2-46" name="__codelineno-2-46" href="#__codelineno-2-46"></a><span class="w">    </span><span class="k">end</span><span class="w"></span>
+<a id="__codelineno-2-47" name="__codelineno-2-47" href="#__codelineno-2-47"></a><span class="c">%%%%%</span><span class="w"></span>
+<a id="__codelineno-2-48" name="__codelineno-2-48" href="#__codelineno-2-48"></a><span class="c">% O restante da função se resume em utilizar o que foi adquirido acima para criar o gráfico</span><span class="w"></span>
+<a id="__codelineno-2-49" name="__codelineno-2-49" href="#__codelineno-2-49"></a><span class="c">%%%%%</span><span class="w"></span>
+<a id="__codelineno-2-50" name="__codelineno-2-50" href="#__codelineno-2-50"></a><span class="k">end</span><span class="w"> </span><span class="c">% end function</span><span class="w"></span>
+</code></pre></div>
+<h3 id="algoritmo-de-dimensionamento-do-filtro-ideal">Algoritmo de dimensionamento do filtro ideal</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c">% Localiza-se objeto de nome &#39;fig_main&#39; e recupera os seus dados</span><span class="w"></span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span><span class="n">GUI1</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">findobj</span><span class="p">(</span><span class="nb">allchild</span><span class="p">(</span><span class="nb">groot</span><span class="p">),</span><span class="w"> </span><span class="s">&#39;flat&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;Tag&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;fig_main&#39;</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="n">handlesGUI1</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">guidata</span><span class="p">(</span><span class="n">GUI1</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="c">% Recupera dados referentes à planta a partir do compartilhamento de dados entre arquivos    </span><span class="w"></span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">    </span><span class="n">PlantData</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">getappdata</span><span class="p">(</span><span class="n">handlesGUI1</span><span class="p">.</span><span class="n">fig_main</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;PlantData&#39;</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">    </span><span class="n">ganho</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">PlantData</span><span class="p">.</span><span class="n">ganho</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">    </span><span class="n">num</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">PlantData</span><span class="p">.</span><span class="n">num</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">    </span><span class="n">den</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">PlantData</span><span class="p">.</span><span class="n">den</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">    </span><span class="n">ts</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">PlantData</span><span class="p">.</span><span class="n">ts</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="c">% Obtêm pontos do diagrama de Nyquist da função de transferência da planta    </span><span class="w"></span>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">    </span><span class="n">ft</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">ganho</span><span class="o">*</span><span class="n">tf</span><span class="p">(</span><span class="n">num</span><span class="p">,</span><span class="w"> </span><span class="n">den</span><span class="p">,</span><span class="w"> </span><span class="n">ts</span><span class="p">);</span><span class="w">  </span>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="w">    </span><span class="p">[</span><span class="n">re</span><span class="p">,</span><span class="w"> </span><span class="n">im</span><span class="p">]</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">nyquist</span><span class="p">(</span><span class="n">ft</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="o">*</span><span class="nb">pi</span><span class="o">*</span><span class="n">freq</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="c">% Variáveis para executar o algoritmo</span><span class="w"></span>
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="w">    </span><span class="n">len</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">length</span><span class="p">(</span><span class="n">freq</span><span class="p">);</span><span class="w">      </span><span class="c">% Comprimento do vetor frequência</span><span class="w"></span>
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="w">    </span><span class="n">q</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">q_init</span><span class="o">*</span><span class="nb">ones</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">len</span><span class="p">);</span><span class="w"> </span><span class="c">% O vetor referente ao parâmetro Q(s) é inicializado como todos os valores </span><span class="w"></span>
+<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="w">                             </span><span class="c">% igual ao escolhido pelo usuário (&#39;q_init&#39;)</span><span class="w"></span>
+<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="w">    </span><span class="nb">flag</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">                </span><span class="c">%</span><span class="w"></span>
+<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a><span class="w">    </span><span class="n">mag_corte1</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w">          </span><span class="c">% Variáveis </span><span class="w"></span>
+<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a><span class="w">    </span><span class="n">mag_corte2</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w">          </span><span class="c">% de</span><span class="w"></span>
+<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a><span class="w">    </span><span class="n">f_c1</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w">               </span><span class="c">% suporte</span><span class="w"></span>
+<a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a><span class="w">    </span><span class="n">f_c2</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w">                </span><span class="c">% </span><span class="w"></span>
+<a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a>
+<a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a><span class="c">% Laço responsável pelo algoritmo de dimensionamento do filtro    </span><span class="w"></span>
+<a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="nb">i</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">1</span><span class="p">:</span><span class="mi">1</span><span class="p">:</span><span class="n">len</span><span class="w"></span>
+<a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a><span class="w">        </span><span class="n">aux</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">abs</span><span class="p">(</span><span class="n">q</span><span class="p">(</span><span class="nb">i</span><span class="p">))</span>^<span class="mi">2</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a><span class="w">        </span><span class="nb">cond</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">inequacao</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">aux</span><span class="p">,</span><span class="w"> </span><span class="n">re</span><span class="p">(</span><span class="nb">i</span><span class="p">),</span><span class="w"> </span><span class="n">im</span><span class="p">(</span><span class="nb">i</span><span class="p">));</span><span class="w"></span>
+<a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a><span class="w">        </span><span class="c">% Caso, para os atuais valores de frequência, &#39;a&#39; e &#39;Q&#39;, a inequação não seja válida, o valor de &#39;Q&#39; </span><span class="w"></span>
+<a id="__codelineno-3-29" name="__codelineno-3-29" href="#__codelineno-3-29"></a><span class="w">        </span><span class="c">% é diminuído, no passo escolhido, até que a mesma se torne válida. Só assim, dando prosseguimento </span><span class="w"></span>
+<a id="__codelineno-3-30" name="__codelineno-3-30" href="#__codelineno-3-30"></a><span class="w">        </span><span class="c">% ao algoritmo</span><span class="w"></span>
+<a id="__codelineno-3-31" name="__codelineno-3-31" href="#__codelineno-3-31"></a><span class="w">        </span><span class="k">while</span><span class="p">(</span><span class="o">~</span><span class="nb">cond</span><span class="p">)</span><span class="w"></span>
+<a id="__codelineno-3-32" name="__codelineno-3-32" href="#__codelineno-3-32"></a><span class="w">            </span><span class="n">q</span><span class="p">(</span><span class="nb">i</span><span class="p">:</span><span class="k">end</span><span class="p">)</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">q</span><span class="p">(</span><span class="nb">i</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">q_step</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-3-33" name="__codelineno-3-33" href="#__codelineno-3-33"></a><span class="w">            </span><span class="n">aux</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">abs</span><span class="p">(</span><span class="n">q</span><span class="p">(</span><span class="nb">i</span><span class="p">))</span>^<span class="mi">2</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-3-34" name="__codelineno-3-34" href="#__codelineno-3-34"></a><span class="w">            </span><span class="nb">cond</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">inequacao</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">aux</span><span class="p">,</span><span class="w"> </span><span class="n">re</span><span class="p">(</span><span class="nb">i</span><span class="p">),</span><span class="w"> </span><span class="n">im</span><span class="p">(</span><span class="nb">i</span><span class="p">));</span><span class="w"></span>
+<a id="__codelineno-3-35" name="__codelineno-3-35" href="#__codelineno-3-35"></a><span class="w">        </span><span class="k">end</span><span class="w"></span>
+<a id="__codelineno-3-36" name="__codelineno-3-36" href="#__codelineno-3-36"></a><span class="w">        </span><span class="c">% Obtêm-se os pontos pelas redondezas da frequência de corte (-3 dB)</span><span class="w"></span>
+<a id="__codelineno-3-37" name="__codelineno-3-37" href="#__codelineno-3-37"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">flag</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">mag2db</span><span class="p">(</span><span class="n">q</span><span class="p">(</span><span class="nb">i</span><span class="p">))</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="o">-</span><span class="mi">3</span><span class="p">)</span><span class="w"></span>
+<a id="__codelineno-3-38" name="__codelineno-3-38" href="#__codelineno-3-38"></a><span class="w">            </span><span class="n">mag_corte1</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">mag2db</span><span class="p">(</span><span class="n">q</span><span class="p">(</span><span class="nb">i</span><span class="o">-</span><span class="mi">1</span><span class="p">));</span><span class="w"></span>
+<a id="__codelineno-3-39" name="__codelineno-3-39" href="#__codelineno-3-39"></a><span class="w">            </span><span class="n">mag_corte2</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">mag2db</span><span class="p">(</span><span class="n">q</span><span class="p">(</span><span class="nb">i</span><span class="p">));</span><span class="w"></span>
+<a id="__codelineno-3-40" name="__codelineno-3-40" href="#__codelineno-3-40"></a><span class="w">            </span><span class="n">f_c1</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">freq</span><span class="p">(</span><span class="nb">i</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-3-41" name="__codelineno-3-41" href="#__codelineno-3-41"></a><span class="w">            </span><span class="n">f_c2</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">freq</span><span class="p">(</span><span class="nb">i</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-3-42" name="__codelineno-3-42" href="#__codelineno-3-42"></a><span class="w">            </span><span class="nb">flag</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-3-43" name="__codelineno-3-43" href="#__codelineno-3-43"></a><span class="w">        </span><span class="k">end</span><span class="w"></span>
+<a id="__codelineno-3-44" name="__codelineno-3-44" href="#__codelineno-3-44"></a><span class="w">        </span><span class="c">% Se entrar na condição anterior com i=1 vai dar problema no i-1. Tratamento utilizado para </span><span class="w"></span>
+<a id="__codelineno-3-45" name="__codelineno-3-45" href="#__codelineno-3-45"></a><span class="w">        </span><span class="c">% o caso em que o primeiro ponto testado já é menor do que -3dB</span><span class="w"></span>
+<a id="__codelineno-3-46" name="__codelineno-3-46" href="#__codelineno-3-46"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">i</span><span class="o">==</span><span class="mi">1</span><span class="p">)</span><span class="w"></span>
+<a id="__codelineno-3-47" name="__codelineno-3-47" href="#__codelineno-3-47"></a><span class="w">            </span><span class="nb">flag</span><span class="p">=</span><span class="mi">0</span><span class="p">;</span><span class="w"> </span>
+<a id="__codelineno-3-48" name="__codelineno-3-48" href="#__codelineno-3-48"></a><span class="w">        </span><span class="k">end</span><span class="w"></span>
+<a id="__codelineno-3-49" name="__codelineno-3-49" href="#__codelineno-3-49"></a><span class="w">    </span><span class="k">end</span><span class="w"> </span><span class="c">% end for</span><span class="w"></span>
+<a id="__codelineno-3-50" name="__codelineno-3-50" href="#__codelineno-3-50"></a>
+<a id="__codelineno-3-51" name="__codelineno-3-51" href="#__codelineno-3-51"></a><span class="c">% Cálculo do coeficiente angular (decaimento)</span><span class="w"></span>
+<a id="__codelineno-3-52" name="__codelineno-3-52" href="#__codelineno-3-52"></a><span class="w">    </span><span class="n">coef_angular</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">(</span><span class="n">mag_corte1</span><span class="o">-</span><span class="n">mag_corte2</span><span class="p">)</span><span class="o">/</span><span class="nb">log10</span><span class="p">(</span><span class="n">f_c1</span><span class="o">/</span><span class="n">f_c2</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-3-53" name="__codelineno-3-53" href="#__codelineno-3-53"></a><span class="w">    </span><span class="c">% O coeficiente angular será igual a zero apenas no caso em que o primeiro ponto testado já é menor </span><span class="w"></span>
+<a id="__codelineno-3-54" name="__codelineno-3-54" href="#__codelineno-3-54"></a><span class="w">    </span><span class="c">% do que -3dB. Já que &#39;flag&#39; sempre foi igual a 1, as variáveis ainda terão os seus valores iniciais. </span><span class="w"></span>
+<a id="__codelineno-3-55" name="__codelineno-3-55" href="#__codelineno-3-55"></a><span class="w">    </span><span class="c">% Nesse caso, é necessário aumentar o intervalo da frequência para que o algoritmo possa ser executado</span><span class="w"></span>
+<a id="__codelineno-3-56" name="__codelineno-3-56" href="#__codelineno-3-56"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="n">coef_angular</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
+<a id="__codelineno-3-57" name="__codelineno-3-57" href="#__codelineno-3-57"></a><span class="w">        </span><span class="nb">errordlg</span><span class="p">(</span><span class="s">&#39;You must increase the frequency range.&#39;</span><span class="p">,</span><span class="s">&#39;Invalid Input&#39;</span><span class="p">,</span><span class="s">&#39;modal&#39;</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-3-58" name="__codelineno-3-58" href="#__codelineno-3-58"></a><span class="w">        </span><span class="k">return</span><span class="w">    </span>
+<a id="__codelineno-3-59" name="__codelineno-3-59" href="#__codelineno-3-59"></a><span class="w">    </span><span class="k">else</span><span class="w"></span>
+<a id="__codelineno-3-60" name="__codelineno-3-60" href="#__codelineno-3-60"></a><span class="w">        </span><span class="c">% Calcula-se a frequência de corte do filtro</span><span class="w"></span>
+<a id="__codelineno-3-61" name="__codelineno-3-61" href="#__codelineno-3-61"></a><span class="w">        </span><span class="p">(</span><span class="o">*</span>$<span class="o">\</span><span class="n">color</span><span class="p">{</span><span class="n">codegreen</span><span class="p">}</span><span class="n">Coef</span><span class="p">.</span><span class="w"> </span><span class="n">Angular</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="o">\</span><span class="n">frac</span><span class="p">{</span><span class="n">x_1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span>3<span class="n">dB</span><span class="p">}{</span><span class="nb">log</span><span class="p">(</span><span class="n">f_1</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">Freq</span><span class="p">.</span><span class="n">Corte</span><span class="p">)}</span>$<span class="o">*</span><span class="p">)</span><span class="w"> </span>
+<a id="__codelineno-3-62" name="__codelineno-3-62" href="#__codelineno-3-62"></a><span class="w">        </span><span class="n">freq_corte</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">10</span>^<span class="p">(</span><span class="nb">log10</span><span class="p">(</span><span class="n">f_c1</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="p">(</span><span class="n">mag_corte1</span><span class="o">+</span><span class="mi">3</span><span class="p">)</span><span class="o">/</span><span class="n">coef_angular</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-3-63" name="__codelineno-3-63" href="#__codelineno-3-63"></a><span class="w">        </span><span class="c">% A ordem do filtro é encontrada considerando que:</span><span class="w"></span>
+<a id="__codelineno-3-64" name="__codelineno-3-64" href="#__codelineno-3-64"></a><span class="w">        </span><span class="c">% Primeira ordem: decaimento de -20dB/década</span><span class="w"></span>
+<a id="__codelineno-3-65" name="__codelineno-3-65" href="#__codelineno-3-65"></a><span class="w">        </span><span class="c">% Segunda ordem: decaimento de -40dB/década</span><span class="w"></span>
+<a id="__codelineno-3-66" name="__codelineno-3-66" href="#__codelineno-3-66"></a><span class="w">        </span><span class="c">% Terceira ordem: decaimento de -60dB/década</span><span class="w"></span>
+<a id="__codelineno-3-67" name="__codelineno-3-67" href="#__codelineno-3-67"></a><span class="w">        </span><span class="c">% ...</span><span class="w"></span>
+<a id="__codelineno-3-68" name="__codelineno-3-68" href="#__codelineno-3-68"></a><span class="w">        </span><span class="c">% Por fim, arredonda-se pra cima o valor encontrado e garante-se que o mesmo seja múltiplo de 2.</span><span class="w"></span>
+<a id="__codelineno-3-69" name="__codelineno-3-69" href="#__codelineno-3-69"></a><span class="w">        </span><span class="n">filtro_ordem</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">ceil</span><span class="p">(</span><span class="n">coef_angular</span><span class="o">/-</span><span class="mi">20</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-3-70" name="__codelineno-3-70" href="#__codelineno-3-70"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="nb">mod</span><span class="p">(</span><span class="n">filtro_ordem</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="o">~=</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
+<a id="__codelineno-3-71" name="__codelineno-3-71" href="#__codelineno-3-71"></a><span class="w">            </span><span class="n">filtro_ordem</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">filtro_ordem</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-3-72" name="__codelineno-3-72" href="#__codelineno-3-72"></a><span class="w">        </span><span class="k">end</span><span class="w"></span>
+<a id="__codelineno-3-73" name="__codelineno-3-73" href="#__codelineno-3-73"></a><span class="c">%%%%%</span><span class="w"></span>
+<a id="__codelineno-3-74" name="__codelineno-3-74" href="#__codelineno-3-74"></a><span class="c">% O restante do código se resume em utilizar o que foi adquirido para criar o gráfico</span><span class="w"></span>
+<a id="__codelineno-3-75" name="__codelineno-3-75" href="#__codelineno-3-75"></a><span class="c">%%%%%</span><span class="w"></span>
+<a id="__codelineno-3-76" name="__codelineno-3-76" href="#__codelineno-3-76"></a><span class="w">    </span><span class="k">end</span><span class="w"> </span><span class="c">% end if</span><span class="w"></span>
+</code></pre></div>
+<h4 id="fluxograma-correspondente-ao-algoritmo">Fluxograma correspondente ao algoritmo</h4>
+<p><img alt="" src="https://github.com/peuvitor/repetitive-controller-designer/blob/master/images/algo_filtro.PNG?raw=true" /></p>
+
+              
+            </article>
+            
+          </div>
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Voltar ao topo
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+    
+    <nav class="md-footer__inner md-grid" aria-label="Rodapé" >
+      
+        
+        <a href="../../ds/fraud-detection/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: Detecção de fraude" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Anterior
+              </span>
+              Detecção de fraude
+            </div>
+          </div>
+        </a>
+      
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tracking", "navigation.sections", "navigation.indexes", "navigation.top", "navigation.tabs", "navigation.tabs.sticky"], "search": "../../../assets/javascripts/workers/search.b97dbffb.min.js", "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.config.lang": "pt", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Buscar", "search.result.more.one": "Mais 1 nesta p\u00e1gina", "search.result.more.other": "Mais # nesta p\u00e1gina", "search.result.none": "Nenhum resultado encontrado", "search.result.one": "1 resultado encontrado", "search.result.other": "# resultados encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version.title": "Selecione a vers\u00e3o"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.6c7ad80a.min.js"></script>
+      
+    
+  </body>
+</html>
