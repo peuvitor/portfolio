@@ -1,0 +1,1599 @@
+
+<!doctype html>
+<html lang="pt" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.3.9">
+    
+    
+      
+        <title>Predição da progressão do diabetes - Portfólio de Pedro Lima</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.1d29e8d0.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.cbb835fc.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#4051b5">
+        
+      
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#aprendizado-de-maquina-supervisionado-regressao" class="md-skip">
+          Ir para o conteúdo
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
+    <a href="../../.." title="Portfólio de Pedro Lima" class="md-header__button md-logo" aria-label="Portfólio de Pedro Lima" data-md-component="logo">
+      
+  <img src="../../../images/monitor.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Portfólio de Pedro Lima
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Predição da progressão do diabetes
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Buscar" placeholder="Buscar" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Pesquisar">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Limpar" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando a pesquisa
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Abas" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../.." class="md-tabs__link">
+      Sobre mim
+    </a>
+  </li>
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../" class="md-tabs__link md-tabs__link--active">
+        Projetos
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegação" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Portfólio de Pedro Lima" class="md-nav__button md-logo" aria-label="Portfólio de Pedro Lima" data-md-component="logo">
+      
+  <img src="../../../images/monitor.png" alt="logo">
+
+    </a>
+    Portfólio de Pedro Lima
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Sobre mim
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../">Projetos</a>
+          
+            <label for="__nav_2">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Projetos" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Projetos
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_2">
+          Engenharia de dados
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Engenharia de dados" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          Engenharia de dados
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../de/etl-aws/" class="md-nav__link">
+        EL na AWS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../de/scraping-jobs/" class="md-nav__link">
+        Raspagem de dados do LinkedIn
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../de/modelagem-bd/" class="md-nav__link">
+        Modelagem de banco de dados
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" type="checkbox" id="__nav_2_3" checked>
+      
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_3">
+          Ciência de Dados
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Ciência de Dados" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          Ciência de Dados
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fraud-detection/" class="md-nav__link">
+        Detecção de fraude
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Predição da progressão do diabetes
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Predição da progressão do diabetes
+      </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="Nesta página">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Nesta página
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#sobre" class="md-nav__link">
+    Sobre
+  </a>
+  
+    <nav class="md-nav" aria-label="Sobre">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#objetivo" class="md-nav__link">
+    Objetivo
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#base-de-dados" class="md-nav__link">
+    Base de dados
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#algoritmos" class="md-nav__link">
+    Algoritmos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metricas" class="md-nav__link">
+    Métricas
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parte-1-importar-bibliotecas" class="md-nav__link">
+    PARTE 1: Importar bibliotecas
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parte-2-carregar-e-visualizar-base-de-dados" class="md-nav__link">
+    PARTE 2: Carregar e visualizar base de dados
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parte-3-pre-processamento" class="md-nav__link">
+    PARTE 3: Pré-processamento
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parte-4-dividir-base-de-dados-para-treinamento-e-validacao" class="md-nav__link">
+    PARTE 4: Dividir base de dados para treinamento e validação
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parte-5-metodos-de-regressao" class="md-nav__link">
+    PARTE 5: Métodos de Regressão
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parte-6-avaliacao-das-metricas" class="md-nav__link">
+    PARTE 6: Avaliação das Métricas
+  </a>
+  
+    <nav class="md-nav" aria-label="PARTE 6: Avaliação das Métricas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#variancia-explicada" class="md-nav__link">
+    Variância Explicada
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mse" class="md-nav__link">
+    MSE
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#r2" class="md-nav__link">
+    R2
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#analise" class="md-nav__link">
+    Análise
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parte-7-influencia-dos-atributos-nos-resultados" class="md-nav__link">
+    PARTE 7: Influência dos atributos nos resultados
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parte-8-discussao" class="md-nav__link">
+    PARTE 8: Discussão
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4" type="checkbox" id="__nav_2_4" >
+      
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_4">
+          Diversos
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Diversos" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_4">
+          <span class="md-nav__icon md-icon"></span>
+          Diversos
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../misc/matlab/" class="md-nav__link">
+        Desenvolvimento de aplicativo no MATLAB
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="Nesta página">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Nesta página
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#sobre" class="md-nav__link">
+    Sobre
+  </a>
+  
+    <nav class="md-nav" aria-label="Sobre">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#objetivo" class="md-nav__link">
+    Objetivo
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#base-de-dados" class="md-nav__link">
+    Base de dados
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#algoritmos" class="md-nav__link">
+    Algoritmos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metricas" class="md-nav__link">
+    Métricas
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parte-1-importar-bibliotecas" class="md-nav__link">
+    PARTE 1: Importar bibliotecas
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parte-2-carregar-e-visualizar-base-de-dados" class="md-nav__link">
+    PARTE 2: Carregar e visualizar base de dados
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parte-3-pre-processamento" class="md-nav__link">
+    PARTE 3: Pré-processamento
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parte-4-dividir-base-de-dados-para-treinamento-e-validacao" class="md-nav__link">
+    PARTE 4: Dividir base de dados para treinamento e validação
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parte-5-metodos-de-regressao" class="md-nav__link">
+    PARTE 5: Métodos de Regressão
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parte-6-avaliacao-das-metricas" class="md-nav__link">
+    PARTE 6: Avaliação das Métricas
+  </a>
+  
+    <nav class="md-nav" aria-label="PARTE 6: Avaliação das Métricas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#variancia-explicada" class="md-nav__link">
+    Variância Explicada
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mse" class="md-nav__link">
+    MSE
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#r2" class="md-nav__link">
+    R2
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#analise" class="md-nav__link">
+    Análise
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parte-7-influencia-dos-atributos-nos-resultados" class="md-nav__link">
+    PARTE 7: Influência dos atributos nos resultados
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parte-8-discussao" class="md-nav__link">
+    PARTE 8: Discussão
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<h1 id="aprendizado-de-maquina-supervisionado-regressao">Aprendizado de Máquina Supervisionado - Regressão</h1>
+<h2 id="sobre">Sobre</h2>
+<h3 id="objetivo">Objetivo</h3>
+<p>Avaliar métodos e métricas referentes à problemas de regressão. A ideia não é se ater a detalhes de funcionamento de cada método, mas sim entender quais métricas podem ser consideradas nessa situação e ainda propor uma forma de explicar a influência de cada atributo nos resultados.</p>
+<h3 id="base-de-dados">Base de dados</h3>
+<p>Será utilizada uma das bases de dados disponíveis na biblioteca Scikit-Learn.</p>
+<p>Target: medida quantitativa da progressão da doença um ano após uma baseline.</p>
+<p>Instâncias: 442</p>
+<p>Atributos:</p>
+<ul>
+<li>
+<p><em>age</em>: idade;</p>
+</li>
+<li>
+<p><em>sex</em>: sexo biológico;</p>
+</li>
+<li>
+<p><em>bmi</em>: índice de massa corporal (body mass index);</p>
+</li>
+<li>
+<p><em>bp</em>: pressão arterial média (average blood pressure);</p>
+</li>
+<li>
+<p><em>s1</em>: nível sérico de colesterol total (tc - total serum cholesterol);</p>
+</li>
+<li>
+<p><em>s2</em>: lipoproteína de baixa densidade (ldl - low-density lipoproteins);</p>
+</li>
+<li>
+<p><em>s3</em>: lipoproteína de alta densidade (hdl - high-density lipoproteins);</p>
+</li>
+<li>
+<p><em>s4</em>: colesterol HDL (tch - total cholesterol / HDL);</p>
+</li>
+<li>
+<p><em>s5</em>: concentração sérica de triglicerídeos (ltg - possibly log of serum triglycerides level);</p>
+</li>
+<li>
+<p><em>s6</em>: nível de açúcar no sangue (glu - blood sugar level).</p>
+</li>
+</ul>
+<p><a href="https://scikit-learn.org/stable/modules/generated/sklearn.datasets.load_diabetes.html#sklearn.datasets.load_diabetes">Mais informações</a>.</p>
+<h3 id="algoritmos">Algoritmos</h3>
+<ul>
+<li>
+<p>Regressão linear;</p>
+</li>
+<li>
+<p>Árvore de decisão;</p>
+</li>
+<li>
+<p>Random Forest;</p>
+</li>
+<li>
+<p>Support Vector Regression (SVR).</p>
+</li>
+</ul>
+<h3 id="metricas">Métricas</h3>
+<ul>
+<li>
+<p>Variação explicada (<em>explained_variance_score</em>): mede a proporção em que um modelo matemático explica a variação de um determinado conjunto de dados. O melhor valor possível é 1, valores mais baixos são piores;</p>
+</li>
+<li>
+<p>Erro quadrático médio - MSE (<em>mean_squared_error</em>): mede a média dos quadrados dos erros, ou seja, a diferença média quadrática entre os valores estimados e o valor real. É uma medida da qualidade de um estimador. É sempre um valor positivo que diminui à medida que o erro se aproxima de zero;</p>
+</li>
+<li>
+<p>Coeficiente de determinação (<em>r2_score</em>): fornece uma indicação da qualidade do ajuste e, portanto, uma medida de quão bem as amostras não vistas provavelmente serão previstas pelo modelo, por meio da proporção da variância explicada. O melhor valor possível é 1 e pode ser negativo (o modelo pode ser arbitrariamente pior). Um modelo constante que sempre prevê o valor esperado de y, desconsiderando os recursos de entrada, obteria uma pontuação r2 de 0.</p>
+</li>
+</ul>
+<h2 id="parte-1-importar-bibliotecas">PARTE 1: Importar bibliotecas</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>                            <span class="c1"># criação de gráficos e visualizações de dados em geral</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>                                         <span class="c1"># realizar cálculos em arrays multidimensionais</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>                                        <span class="c1"># manipulação e análise de dados</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sn</span>                                       <span class="c1"># visualização de gráficos estatísticos</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="kn">import</span> <span class="nn">shap</span>                                                <span class="c1"># explicar saídas dos modelos de aprendizado de máquina</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <span class="n">load_diabetes</span>                 <span class="c1"># carregar base de dados</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>       <span class="c1"># utilizado para dividir a base de dados em treino e teste</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LinearRegression</span>          <span class="c1"># importar método de regressão linear      </span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="kn">from</span> <span class="nn">sklearn.tree</span> <span class="kn">import</span> <span class="n">DecisionTreeRegressor</span>             <span class="c1"># importar método de árvore de decisão</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">RandomForestRegressor</span>         <span class="c1"># importar método random forest</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="kn">from</span> <span class="nn">sklearn.svm</span> <span class="kn">import</span> <span class="n">SVR</span>                                <span class="c1"># importar método SVR           </span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">metrics</span>                                <span class="c1"># importar métricas de avaliação</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="c1"># a saída dos comandos de plotagem é exibida diretamente abaixo da célula</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
+</code></pre></div>
+<h2 id="parte-2-carregar-e-visualizar-base-de-dados">PARTE 2: Carregar e visualizar base de dados</h2>
+<p>Algumas formas interessantes de visualizar os dados presentes na base:</p>
+<p><em>.info()</em>: informações resumidas sobre cada atributo (quantidade, tipo, etc);</p>
+<p><em>.describe()</em>: gerar estatísticas descritivas de cada atributo;</p>
+<p><em>.corr()</em>: calcula a correlação de colunas em pares (excluindo valores NA/nulos);</p>
+<p><em>.pairplot(..)</em>: visualização do relacionamento de colunas em pares.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># extrair dados</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">diabetes</span> <span class="o">=</span> <span class="n">load_diabetes</span><span class="p">(</span><span class="n">as_frame</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">frame</span> <span class="o">=</span> <span class="n">diabetes</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">diabetes</span><span class="o">.</span><span class="n">target</span><span class="p">,</span> <span class="n">diabetes</span><span class="o">.</span><span class="n">frame</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="c1"># checar nome dos atributos e shape</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&quot;&quot;Atributos:</span><span class="si">{</span><span class="n">diabetes</span><span class="o">.</span><span class="n">feature_names</span><span class="si">}</span><span class="se">\n</span><span class="s2"></span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="s2">          Shape dados:</span><span class="si">{</span><span class="n">diabetes</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="se">\n</span><span class="s2"></span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="s2">          Shape target:</span><span class="si">{</span><span class="n">diabetes</span><span class="o">.</span><span class="n">target</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">&quot;&quot;&quot;</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>Atributos:[&#39;age&#39;, &#39;sex&#39;, &#39;bmi&#39;, &#39;bp&#39;, &#39;s1&#39;, &#39;s2&#39;, &#39;s3&#39;, &#39;s4&#39;, &#39;s5&#39;, &#39;s6&#39;]
+Shape dados:(442, 10)
+Shape target:(442,)
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">frame</span><span class="o">.</span><span class="n">info</span><span class="p">()</span> 
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 442 entries, 0 to 441
+Data columns (total 11 columns):
+ #   Column  Non-Null Count  Dtype  
+---  ------  --------------  -----  
+ 0   age     442 non-null    float64
+ 1   sex     442 non-null    float64
+ 2   bmi     442 non-null    float64
+ 3   bp      442 non-null    float64
+ 4   s1      442 non-null    float64
+ 5   s2      442 non-null    float64
+ 6   s3      442 non-null    float64
+ 7   s4      442 non-null    float64
+ 8   s5      442 non-null    float64
+ 9   s6      442 non-null    float64
+ 10  target  442 non-null    float64
+dtypes: float64(11)
+memory usage: 38.1 KB
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">frame</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</code></pre></div>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe" style='font-size:75%'>
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>age</th>
+      <th>sex</th>
+      <th>bmi</th>
+      <th>bp</th>
+      <th>s1</th>
+      <th>s2</th>
+      <th>s3</th>
+      <th>s4</th>
+      <th>s5</th>
+      <th>s6</th>
+      <th>target</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>4.420000e+02</td>
+      <td>4.420000e+02</td>
+      <td>4.420000e+02</td>
+      <td>4.420000e+02</td>
+      <td>4.420000e+02</td>
+      <td>4.420000e+02</td>
+      <td>4.420000e+02</td>
+      <td>4.420000e+02</td>
+      <td>4.420000e+02</td>
+      <td>4.420000e+02</td>
+      <td>442.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>-3.639623e-16</td>
+      <td>1.309912e-16</td>
+      <td>-8.013951e-16</td>
+      <td>1.289818e-16</td>
+      <td>-9.042540e-17</td>
+      <td>1.301121e-16</td>
+      <td>-4.563971e-16</td>
+      <td>3.863174e-16</td>
+      <td>-3.848103e-16</td>
+      <td>-3.398488e-16</td>
+      <td>152.133484</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>4.761905e-02</td>
+      <td>4.761905e-02</td>
+      <td>4.761905e-02</td>
+      <td>4.761905e-02</td>
+      <td>4.761905e-02</td>
+      <td>4.761905e-02</td>
+      <td>4.761905e-02</td>
+      <td>4.761905e-02</td>
+      <td>4.761905e-02</td>
+      <td>4.761905e-02</td>
+      <td>77.093005</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>-1.072256e-01</td>
+      <td>-4.464164e-02</td>
+      <td>-9.027530e-02</td>
+      <td>-1.123996e-01</td>
+      <td>-1.267807e-01</td>
+      <td>-1.156131e-01</td>
+      <td>-1.023071e-01</td>
+      <td>-7.639450e-02</td>
+      <td>-1.260974e-01</td>
+      <td>-1.377672e-01</td>
+      <td>25.000000</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>-3.729927e-02</td>
+      <td>-4.464164e-02</td>
+      <td>-3.422907e-02</td>
+      <td>-3.665645e-02</td>
+      <td>-3.424784e-02</td>
+      <td>-3.035840e-02</td>
+      <td>-3.511716e-02</td>
+      <td>-3.949338e-02</td>
+      <td>-3.324879e-02</td>
+      <td>-3.317903e-02</td>
+      <td>87.000000</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>5.383060e-03</td>
+      <td>-4.464164e-02</td>
+      <td>-7.283766e-03</td>
+      <td>-5.670611e-03</td>
+      <td>-4.320866e-03</td>
+      <td>-3.819065e-03</td>
+      <td>-6.584468e-03</td>
+      <td>-2.592262e-03</td>
+      <td>-1.947634e-03</td>
+      <td>-1.077698e-03</td>
+      <td>140.500000</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>3.807591e-02</td>
+      <td>5.068012e-02</td>
+      <td>3.124802e-02</td>
+      <td>3.564384e-02</td>
+      <td>2.835801e-02</td>
+      <td>2.984439e-02</td>
+      <td>2.931150e-02</td>
+      <td>3.430886e-02</td>
+      <td>3.243323e-02</td>
+      <td>2.791705e-02</td>
+      <td>211.500000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>1.107267e-01</td>
+      <td>5.068012e-02</td>
+      <td>1.705552e-01</td>
+      <td>1.320442e-01</td>
+      <td>1.539137e-01</td>
+      <td>1.987880e-01</td>
+      <td>1.811791e-01</td>
+      <td>1.852344e-01</td>
+      <td>1.335990e-01</td>
+      <td>1.356118e-01</td>
+      <td>346.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">corr_matrix</span> <span class="o">=</span> <span class="n">frame</span><span class="o">.</span><span class="n">corr</span><span class="p">()</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">sn</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">corr_matrix</span><span class="p">,</span> <span class="n">annot</span><span class="o">=</span><span class="kc">True</span><span class="p">);</span>
+</code></pre></div>
+<p><img alt="" src="../diabetes-images/a7e81a4a53a4f093c9ae5a80e6de32594e235595.jpg" /></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">sn</span><span class="o">.</span><span class="n">pairplot</span><span class="p">(</span><span class="n">frame</span><span class="p">);</span>
+</code></pre></div>
+<p><img alt="" src="../diabetes-images/995b05cb4b1dc68f33ba2e9f9b4b1dc37bc83fcf.jpg" /></p>
+<p>Por questões de aprendizado, a base de dados será dividida em duas:</p>
+<ol>
+<li>
+<p>original</p>
+</li>
+<li>
+<p>original sem as colunas: 'age', 'sex', 's2' (motivo: correlação com target menor que 0,2 (em módulo))</p>
+</li>
+</ol>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1"># base de dados modificada</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="n">frame_mod</span> <span class="o">=</span> <span class="n">frame</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="n">excluir</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;age&#39;</span><span class="p">,</span> <span class="s1">&#39;sex&#39;</span><span class="p">,</span> <span class="s1">&#39;s2&#39;</span><span class="p">]</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="n">frame_mod</span> <span class="o">=</span> <span class="n">frame_mod</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="n">excluir</span><span class="p">)</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="n">frame_mod</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</code></pre></div>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe" style='font-size:90%'>
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>bmi</th>
+      <th>bp</th>
+      <th>s1</th>
+      <th>s3</th>
+      <th>s4</th>
+      <th>s5</th>
+      <th>s6</th>
+      <th>target</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>4.420000e+02</td>
+      <td>4.420000e+02</td>
+      <td>4.420000e+02</td>
+      <td>4.420000e+02</td>
+      <td>4.420000e+02</td>
+      <td>4.420000e+02</td>
+      <td>4.420000e+02</td>
+      <td>442.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>-8.013951e-16</td>
+      <td>1.289818e-16</td>
+      <td>-9.042540e-17</td>
+      <td>-4.563971e-16</td>
+      <td>3.863174e-16</td>
+      <td>-3.848103e-16</td>
+      <td>-3.398488e-16</td>
+      <td>152.133484</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>4.761905e-02</td>
+      <td>4.761905e-02</td>
+      <td>4.761905e-02</td>
+      <td>4.761905e-02</td>
+      <td>4.761905e-02</td>
+      <td>4.761905e-02</td>
+      <td>4.761905e-02</td>
+      <td>77.093005</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>-9.027530e-02</td>
+      <td>-1.123996e-01</td>
+      <td>-1.267807e-01</td>
+      <td>-1.023071e-01</td>
+      <td>-7.639450e-02</td>
+      <td>-1.260974e-01</td>
+      <td>-1.377672e-01</td>
+      <td>25.000000</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>-3.422907e-02</td>
+      <td>-3.665645e-02</td>
+      <td>-3.424784e-02</td>
+      <td>-3.511716e-02</td>
+      <td>-3.949338e-02</td>
+      <td>-3.324879e-02</td>
+      <td>-3.317903e-02</td>
+      <td>87.000000</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>-7.283766e-03</td>
+      <td>-5.670611e-03</td>
+      <td>-4.320866e-03</td>
+      <td>-6.584468e-03</td>
+      <td>-2.592262e-03</td>
+      <td>-1.947634e-03</td>
+      <td>-1.077698e-03</td>
+      <td>140.500000</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>3.124802e-02</td>
+      <td>3.564384e-02</td>
+      <td>2.835801e-02</td>
+      <td>2.931150e-02</td>
+      <td>3.430886e-02</td>
+      <td>3.243323e-02</td>
+      <td>2.791705e-02</td>
+      <td>211.500000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>1.705552e-01</td>
+      <td>1.320442e-01</td>
+      <td>1.539137e-01</td>
+      <td>1.811791e-01</td>
+      <td>1.852344e-01</td>
+      <td>1.335990e-01</td>
+      <td>1.356118e-01</td>
+      <td>346.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<h2 id="parte-3-pre-processamento">PARTE 3: Pré-processamento</h2>
+<p>Dois procedimentos comuns de pré-processamento já são garantidos pela base de dados utilizada:</p>
+<ol>
+<li>
+<p>Normalizar os dados de acordo com a média e desvio padrão;</p>
+</li>
+<li>
+<p>Transformar dados categóricos em valores numéricos (python: sklearn.preprocessing.OneHotEncoder).</p>
+<p>Exemplo: como o algoritmo não entenderia o que é 'masculino' e 'feminino', a variável 'sex' já se encontra transformada para valores numéricos.</p>
+</li>
+</ol>
+<p>Só será verificado se existe alguma instância com valor NA. Caso positivo, esta será excluída. E também se existirem instâncias duplicadas.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1"># verificar valores NA</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="n">frame</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="n">frame_mod</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="c1"># verificar valores duplicados</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="n">frame</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="n">frame_mod</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="c1"># shape após verificação (inicialmente são 442 instâncias)</span>
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Shape base original: </span><span class="si">{</span><span class="n">frame</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s1"> </span><span class="se">\n</span><span class="s1">Shape base modificada: </span><span class="si">{</span><span class="n">frame_mod</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>Shape base original: (442, 11) 
+Shape base modificada: (442, 8)
+</code></pre></div>
+<p>Finalizado o pré-processamento da base de dados, é necessário dividir o conjunto entre (data, target).</p>
+<p>Apesar de isso já ter sido feito no início quando a base foi importada, o procedimento precisa ser refeito, pois no pré-processamento foi utilizada a base completa.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c1"># a variável &#39;y&#39; é o atributo &#39;target&#39;, o restante compõe a variável &#39;X&#39;</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">frame</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">frame</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="n">X_mod</span><span class="p">,</span> <span class="n">y_mod</span> <span class="o">=</span> <span class="n">frame_mod</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">frame_mod</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</code></pre></div>
+<h2 id="parte-4-dividir-base-de-dados-para-treinamento-e-validacao">PARTE 4: Dividir base de dados para treinamento e validação</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="n">X_train_mod</span><span class="p">,</span> <span class="n">X_test_mod</span><span class="p">,</span> <span class="n">y_train_mod</span><span class="p">,</span> <span class="n">y_test_mod</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X_mod</span><span class="p">,</span> <span class="n">y_mod</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Base Original</span><span class="se">\n</span><span class="s1">Shape treino: </span><span class="si">{</span><span class="n">X_train</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s1"> </span><span class="se">\n</span><span class="s1">Shape teste: </span><span class="si">{</span><span class="n">X_test</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Shape treino (target): </span><span class="si">{</span><span class="n">y_train</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s1"> </span><span class="se">\n</span><span class="s1">Shape teste (target): </span><span class="si">{</span><span class="n">y_test</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">Base Modificada</span><span class="se">\n</span><span class="s1">Shape treino: </span><span class="si">{</span><span class="n">X_train_mod</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s1"> </span><span class="se">\n</span><span class="s1">Shape teste: </span><span class="si">{</span><span class="n">X_test_mod</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Shape treino (target): </span><span class="si">{</span><span class="n">y_train_mod</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s1"> </span><span class="se">\n</span><span class="s1">Shape teste (target): </span><span class="si">{</span><span class="n">y_test_mod</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>Base Original
+Shape treino: (309, 10) 
+Shape teste: (133, 10)
+Shape treino (target): (309,) 
+Shape teste (target): (133,)
+
+Base Modificada
+Shape treino: (309, 7) 
+Shape teste: (133, 7)
+Shape treino (target): (309,) 
+Shape teste (target): (133,)
+</code></pre></div>
+<h2 id="parte-5-metodos-de-regressao">PARTE 5: Métodos de Regressão</h2>
+<p>Criar os modelos para cada método e armazenar os resultados das respectivas predições, considerando as duas bases de dados (original e modificada).</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="c1">## Regressão Linear - Base Original</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="n">lin</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">()</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="n">lin</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="n">y_pred_lin</span> <span class="o">=</span> <span class="n">lin</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="c1">## Regressão Linear - Base Modificada</span>
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="n">lin_mod</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">()</span>
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="n">lin_mod</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train_mod</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">y_train_mod</span><span class="p">)</span>
+<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="n">y_pred_lin_mod</span> <span class="o">=</span> <span class="n">lin_mod</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test_mod</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>
+<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a><span class="c1">## Árvore de Decisão - Base Original</span>
+<a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a><span class="n">arv_dec</span> <span class="o">=</span> <span class="n">DecisionTreeRegressor</span><span class="p">(</span><span class="n">min_samples_split</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a><span class="n">arv_dec</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+<a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a><span class="n">y_pred_arv</span> <span class="o">=</span> <span class="n">arv_dec</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+<a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a>
+<a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a><span class="c1">## Árvore de Decisão - Base Modificada</span>
+<a id="__codelineno-10-17" name="__codelineno-10-17" href="#__codelineno-10-17"></a><span class="n">arv_dec_mod</span> <span class="o">=</span> <span class="n">DecisionTreeRegressor</span><span class="p">(</span><span class="n">min_samples_split</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<a id="__codelineno-10-18" name="__codelineno-10-18" href="#__codelineno-10-18"></a><span class="n">arv_dec_mod</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train_mod</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">y_train_mod</span><span class="p">)</span>
+<a id="__codelineno-10-19" name="__codelineno-10-19" href="#__codelineno-10-19"></a><span class="n">y_pred_arv_mod</span> <span class="o">=</span> <span class="n">arv_dec_mod</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test_mod</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+<a id="__codelineno-10-20" name="__codelineno-10-20" href="#__codelineno-10-20"></a>
+<a id="__codelineno-10-21" name="__codelineno-10-21" href="#__codelineno-10-21"></a><span class="c1">## Random Forest - Base Original</span>
+<a id="__codelineno-10-22" name="__codelineno-10-22" href="#__codelineno-10-22"></a><span class="n">rf</span> <span class="o">=</span> <span class="n">RandomForestRegressor</span><span class="p">(</span><span class="n">n_estimators</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<a id="__codelineno-10-23" name="__codelineno-10-23" href="#__codelineno-10-23"></a><span class="n">rf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+<a id="__codelineno-10-24" name="__codelineno-10-24" href="#__codelineno-10-24"></a><span class="n">y_pred_rf</span> <span class="o">=</span> <span class="n">rf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+<a id="__codelineno-10-25" name="__codelineno-10-25" href="#__codelineno-10-25"></a>
+<a id="__codelineno-10-26" name="__codelineno-10-26" href="#__codelineno-10-26"></a><span class="c1">## Random Forest - Base Modificada</span>
+<a id="__codelineno-10-27" name="__codelineno-10-27" href="#__codelineno-10-27"></a><span class="n">rf_mod</span> <span class="o">=</span> <span class="n">RandomForestRegressor</span><span class="p">(</span><span class="n">n_estimators</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<a id="__codelineno-10-28" name="__codelineno-10-28" href="#__codelineno-10-28"></a><span class="n">rf_mod</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train_mod</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">y_train_mod</span><span class="p">)</span>
+<a id="__codelineno-10-29" name="__codelineno-10-29" href="#__codelineno-10-29"></a><span class="n">y_pred_rf_mod</span> <span class="o">=</span> <span class="n">rf_mod</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test_mod</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+<a id="__codelineno-10-30" name="__codelineno-10-30" href="#__codelineno-10-30"></a>
+<a id="__codelineno-10-31" name="__codelineno-10-31" href="#__codelineno-10-31"></a><span class="c1">## SVR - Base Original</span>
+<a id="__codelineno-10-32" name="__codelineno-10-32" href="#__codelineno-10-32"></a><span class="n">svm</span> <span class="o">=</span> <span class="n">SVR</span><span class="p">(</span><span class="n">kernel</span><span class="o">=</span><span class="s2">&quot;poly&quot;</span><span class="p">,</span> <span class="n">C</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">gamma</span><span class="o">=</span><span class="s2">&quot;auto&quot;</span><span class="p">,</span> <span class="n">degree</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">epsilon</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">coef0</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<a id="__codelineno-10-33" name="__codelineno-10-33" href="#__codelineno-10-33"></a><span class="n">svm</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+<a id="__codelineno-10-34" name="__codelineno-10-34" href="#__codelineno-10-34"></a><span class="n">y_pred_svm</span> <span class="o">=</span> <span class="n">svm</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+<a id="__codelineno-10-35" name="__codelineno-10-35" href="#__codelineno-10-35"></a>
+<a id="__codelineno-10-36" name="__codelineno-10-36" href="#__codelineno-10-36"></a><span class="c1">## SVR - Base Modificada</span>
+<a id="__codelineno-10-37" name="__codelineno-10-37" href="#__codelineno-10-37"></a><span class="n">svm_mod</span> <span class="o">=</span> <span class="n">SVR</span><span class="p">(</span><span class="n">kernel</span><span class="o">=</span><span class="s2">&quot;poly&quot;</span><span class="p">,</span> <span class="n">C</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">gamma</span><span class="o">=</span><span class="s2">&quot;auto&quot;</span><span class="p">,</span> <span class="n">degree</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">epsilon</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">coef0</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<a id="__codelineno-10-38" name="__codelineno-10-38" href="#__codelineno-10-38"></a><span class="n">svm_mod</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train_mod</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">y_train_mod</span><span class="p">)</span>
+<a id="__codelineno-10-39" name="__codelineno-10-39" href="#__codelineno-10-39"></a><span class="n">y_pred_svm_mod</span> <span class="o">=</span> <span class="n">svm_mod</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test_mod</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="parte-6-avaliacao-das-metricas">PARTE 6: Avaliação das Métricas</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="k">def</span> <span class="nf">calcular_metricas</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">):</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>    <span class="n">ev</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">metrics</span><span class="o">.</span><span class="n">explained_variance_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">),</span><span class="mi">3</span><span class="p">)</span>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>    <span class="n">mse</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">metrics</span><span class="o">.</span><span class="n">mean_squared_error</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span><span class="n">y_pred</span><span class="p">,</span><span class="n">squared</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span><span class="mi">3</span><span class="p">)</span>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>    <span class="n">r2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">metrics</span><span class="o">.</span><span class="n">r2_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">),</span><span class="mi">3</span><span class="p">)</span>
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>    <span class="k">return</span> <span class="n">ev</span><span class="p">,</span> <span class="n">mse</span><span class="p">,</span> <span class="n">r2</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="c1">## Regressão Linear - Base Original</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="n">ev_lin</span><span class="p">,</span> <span class="n">mse_lin</span><span class="p">,</span> <span class="n">r2_lin</span> <span class="o">=</span> <span class="n">calcular_metricas</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred_lin</span><span class="p">)</span>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="c1">## Regressão Linear - Base Modificada</span>
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="n">ev_lin_mod</span><span class="p">,</span> <span class="n">mse_lin_mod</span><span class="p">,</span> <span class="n">r2_lin_mod</span> <span class="o">=</span> <span class="n">calcular_metricas</span><span class="p">(</span><span class="n">y_test_mod</span><span class="p">,</span> <span class="n">y_pred_lin_mod</span><span class="p">)</span>
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>
+<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="c1">## Árvore de Decisão - Base Original</span>
+<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a><span class="n">ev_arv</span><span class="p">,</span> <span class="n">mse_arv</span><span class="p">,</span> <span class="n">r2_arv</span> <span class="o">=</span> <span class="n">calcular_metricas</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred_arv</span><span class="p">)</span>
+<a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a>
+<a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a><span class="c1">## Árvore de Decisão - Base Modificada</span>
+<a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a><span class="n">ev_arv_mod</span><span class="p">,</span> <span class="n">mse_arv_mod</span><span class="p">,</span> <span class="n">r2_arv_mod</span> <span class="o">=</span> <span class="n">calcular_metricas</span><span class="p">(</span><span class="n">y_test_mod</span><span class="p">,</span> <span class="n">y_pred_arv_mod</span><span class="p">)</span>
+<a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a>
+<a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a><span class="c1">## Random Forest - Base Original</span>
+<a id="__codelineno-12-14" name="__codelineno-12-14" href="#__codelineno-12-14"></a><span class="n">ev_rf</span><span class="p">,</span> <span class="n">mse_rf</span><span class="p">,</span> <span class="n">r2_rf</span> <span class="o">=</span> <span class="n">calcular_metricas</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred_rf</span><span class="p">)</span>
+<a id="__codelineno-12-15" name="__codelineno-12-15" href="#__codelineno-12-15"></a>
+<a id="__codelineno-12-16" name="__codelineno-12-16" href="#__codelineno-12-16"></a><span class="c1">## Random Forest - Base Modificada</span>
+<a id="__codelineno-12-17" name="__codelineno-12-17" href="#__codelineno-12-17"></a><span class="n">ev_rf_mod</span><span class="p">,</span> <span class="n">mse_rf_mod</span><span class="p">,</span> <span class="n">r2_rf_mod</span> <span class="o">=</span> <span class="n">calcular_metricas</span><span class="p">(</span><span class="n">y_test_mod</span><span class="p">,</span> <span class="n">y_pred_rf_mod</span><span class="p">)</span>
+<a id="__codelineno-12-18" name="__codelineno-12-18" href="#__codelineno-12-18"></a>
+<a id="__codelineno-12-19" name="__codelineno-12-19" href="#__codelineno-12-19"></a><span class="c1">## SVR - Base Original</span>
+<a id="__codelineno-12-20" name="__codelineno-12-20" href="#__codelineno-12-20"></a><span class="n">ev_svm</span><span class="p">,</span> <span class="n">mse_svm</span><span class="p">,</span> <span class="n">r2_svm</span> <span class="o">=</span> <span class="n">calcular_metricas</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred_svm</span><span class="p">)</span>
+<a id="__codelineno-12-21" name="__codelineno-12-21" href="#__codelineno-12-21"></a>
+<a id="__codelineno-12-22" name="__codelineno-12-22" href="#__codelineno-12-22"></a><span class="c1">## SVR - Base Modificada</span>
+<a id="__codelineno-12-23" name="__codelineno-12-23" href="#__codelineno-12-23"></a><span class="n">ev_svm_mod</span><span class="p">,</span> <span class="n">mse_svm_mod</span><span class="p">,</span> <span class="n">r2_svm_mod</span> <span class="o">=</span> <span class="n">calcular_metricas</span><span class="p">(</span><span class="n">y_test_mod</span><span class="p">,</span> <span class="n">y_pred_svm_mod</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="variancia-explicada">Variância Explicada</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="c1">## Base Original</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="n">ev_lin</span><span class="p">,</span> <span class="n">ev_arv</span><span class="p">,</span> <span class="n">ev_rf</span><span class="p">,</span> <span class="n">ev_svm</span><span class="p">]</span>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="n">legenda</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Reg. Linear&quot;</span><span class="p">,</span> <span class="s2">&quot;Árvore de Dec.&quot;</span><span class="p">,</span> <span class="s2">&quot;RF&quot;</span><span class="p">,</span> <span class="s2">&quot;SVR&quot;</span><span class="p">]</span>
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">y</span><span class="p">))</span>
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a><span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">legenda</span><span class="p">)</span>
+<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a><span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+<a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a><span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Variância Explicada - Base Original&#39;</span><span class="p">)</span>
+<a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a><span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Valores&#39;</span><span class="p">)</span>
+<a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a>
+<a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a>
+<a id="__codelineno-13-14" name="__codelineno-13-14" href="#__codelineno-13-14"></a><span class="c1">## Base Modificada</span>
+<a id="__codelineno-13-15" name="__codelineno-13-15" href="#__codelineno-13-15"></a><span class="n">y1</span> <span class="o">=</span> <span class="p">[</span><span class="n">ev_lin_mod</span><span class="p">,</span> <span class="n">ev_arv_mod</span><span class="p">,</span> <span class="n">ev_rf_mod</span><span class="p">,</span> <span class="n">ev_svm_mod</span><span class="p">]</span>
+<a id="__codelineno-13-16" name="__codelineno-13-16" href="#__codelineno-13-16"></a><span class="n">legenda1</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Reg. Linear&quot;</span><span class="p">,</span> <span class="s2">&quot;Árvore de Dec.&quot;</span><span class="p">,</span> <span class="s2">&quot;RF&quot;</span><span class="p">,</span> <span class="s2">&quot;SVR&quot;</span><span class="p">]</span>
+<a id="__codelineno-13-17" name="__codelineno-13-17" href="#__codelineno-13-17"></a><span class="n">x1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">y1</span><span class="p">))</span>
+<a id="__codelineno-13-18" name="__codelineno-13-18" href="#__codelineno-13-18"></a>
+<a id="__codelineno-13-19" name="__codelineno-13-19" href="#__codelineno-13-19"></a><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<a id="__codelineno-13-20" name="__codelineno-13-20" href="#__codelineno-13-20"></a><span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">)</span>
+<a id="__codelineno-13-21" name="__codelineno-13-21" href="#__codelineno-13-21"></a><span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">legenda1</span><span class="p">)</span>
+<a id="__codelineno-13-22" name="__codelineno-13-22" href="#__codelineno-13-22"></a><span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+<a id="__codelineno-13-23" name="__codelineno-13-23" href="#__codelineno-13-23"></a><span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Variância Explicada - Base Modificada&#39;</span><span class="p">)</span>
+<a id="__codelineno-13-24" name="__codelineno-13-24" href="#__codelineno-13-24"></a><span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Valores&#39;</span><span class="p">)</span>
+<a id="__codelineno-13-25" name="__codelineno-13-25" href="#__codelineno-13-25"></a>
+<a id="__codelineno-13-26" name="__codelineno-13-26" href="#__codelineno-13-26"></a>
+<a id="__codelineno-13-27" name="__codelineno-13-27" href="#__codelineno-13-27"></a><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div>
+<p><img alt="" src="../diabetes-images/16365754ebb6d23c0e7993a6fb56c8df6d579028.jpg" /></p>
+<p><img alt="" src="../diabetes-images/a190e840af98b26b78fdab470d01f3ae77b30629.jpg" /></p>
+<h3 id="mse">MSE</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="c1">## Base Original</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="n">mse_lin</span><span class="p">,</span> <span class="n">mse_arv</span><span class="p">,</span> <span class="n">mse_rf</span><span class="p">,</span> <span class="n">mse_svm</span><span class="p">]</span>
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="n">legenda</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Reg. Linear&quot;</span><span class="p">,</span> <span class="s2">&quot;Árvore de Dec.&quot;</span><span class="p">,</span> <span class="s2">&quot;RF&quot;</span><span class="p">,</span> <span class="s2">&quot;SVR&quot;</span><span class="p">]</span>
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">y</span><span class="p">))</span>
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>
+<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a><span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a><span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">legenda</span><span class="p">)</span>
+<a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a><span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5000</span><span class="p">])</span>
+<a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a><span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;MSE - Base Original&#39;</span><span class="p">)</span>
+<a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a><span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Valores&#39;</span><span class="p">)</span>
+<a id="__codelineno-14-12" name="__codelineno-14-12" href="#__codelineno-14-12"></a>
+<a id="__codelineno-14-13" name="__codelineno-14-13" href="#__codelineno-14-13"></a>
+<a id="__codelineno-14-14" name="__codelineno-14-14" href="#__codelineno-14-14"></a><span class="c1">## Base Modificada</span>
+<a id="__codelineno-14-15" name="__codelineno-14-15" href="#__codelineno-14-15"></a><span class="n">y1</span> <span class="o">=</span> <span class="p">[</span><span class="n">mse_lin_mod</span><span class="p">,</span> <span class="n">mse_arv_mod</span><span class="p">,</span> <span class="n">mse_rf_mod</span><span class="p">,</span> <span class="n">mse_svm_mod</span><span class="p">]</span>
+<a id="__codelineno-14-16" name="__codelineno-14-16" href="#__codelineno-14-16"></a><span class="n">legenda1</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Reg. Linear&quot;</span><span class="p">,</span> <span class="s2">&quot;Árvore de Dec.&quot;</span><span class="p">,</span> <span class="s2">&quot;RF&quot;</span><span class="p">,</span> <span class="s2">&quot;SVR&quot;</span><span class="p">]</span>
+<a id="__codelineno-14-17" name="__codelineno-14-17" href="#__codelineno-14-17"></a><span class="n">x1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">y1</span><span class="p">))</span>
+<a id="__codelineno-14-18" name="__codelineno-14-18" href="#__codelineno-14-18"></a>
+<a id="__codelineno-14-19" name="__codelineno-14-19" href="#__codelineno-14-19"></a><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<a id="__codelineno-14-20" name="__codelineno-14-20" href="#__codelineno-14-20"></a><span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">)</span>
+<a id="__codelineno-14-21" name="__codelineno-14-21" href="#__codelineno-14-21"></a><span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">legenda1</span><span class="p">)</span>
+<a id="__codelineno-14-22" name="__codelineno-14-22" href="#__codelineno-14-22"></a><span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5000</span><span class="p">])</span>
+<a id="__codelineno-14-23" name="__codelineno-14-23" href="#__codelineno-14-23"></a><span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;MSE - Base Modificada&#39;</span><span class="p">)</span>
+<a id="__codelineno-14-24" name="__codelineno-14-24" href="#__codelineno-14-24"></a><span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Valores&#39;</span><span class="p">)</span>
+<a id="__codelineno-14-25" name="__codelineno-14-25" href="#__codelineno-14-25"></a>
+<a id="__codelineno-14-26" name="__codelineno-14-26" href="#__codelineno-14-26"></a>
+<a id="__codelineno-14-27" name="__codelineno-14-27" href="#__codelineno-14-27"></a><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div>
+<p><img alt="" src="../diabetes-images/f781fe72882af6b70357c66f324e92bfedde2ab9.jpg" /></p>
+<p><img alt="" src="../diabetes-images/bdbd84e3f488476f48ee7345f7ca09d302cc7b98.jpg" /></p>
+<h3 id="r2">R2</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="c1">## Base Original</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="n">r2_lin</span><span class="p">,</span> <span class="n">r2_arv</span><span class="p">,</span> <span class="n">r2_rf</span><span class="p">,</span> <span class="n">r2_svm</span><span class="p">]</span>
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="n">legenda</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Reg. Linear&quot;</span><span class="p">,</span> <span class="s2">&quot;Árvore de Dec.&quot;</span><span class="p">,</span> <span class="s2">&quot;RF&quot;</span><span class="p">,</span> <span class="s2">&quot;SVR&quot;</span><span class="p">]</span>
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">y</span><span class="p">))</span>
+<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>
+<a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a><span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a><span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">legenda</span><span class="p">)</span>
+<a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a><span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+<a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a><span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;R2 - Base Original&#39;</span><span class="p">)</span>
+<a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a><span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Valores&#39;</span><span class="p">)</span>
+<a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a>
+<a id="__codelineno-15-13" name="__codelineno-15-13" href="#__codelineno-15-13"></a>
+<a id="__codelineno-15-14" name="__codelineno-15-14" href="#__codelineno-15-14"></a><span class="c1">## Base Modificada</span>
+<a id="__codelineno-15-15" name="__codelineno-15-15" href="#__codelineno-15-15"></a><span class="n">y1</span> <span class="o">=</span> <span class="p">[</span><span class="n">r2_lin_mod</span><span class="p">,</span> <span class="n">r2_arv_mod</span><span class="p">,</span> <span class="n">r2_rf_mod</span><span class="p">,</span> <span class="n">r2_svm_mod</span><span class="p">]</span>
+<a id="__codelineno-15-16" name="__codelineno-15-16" href="#__codelineno-15-16"></a><span class="n">legenda1</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Reg. Linear&quot;</span><span class="p">,</span> <span class="s2">&quot;Árvore de Dec.&quot;</span><span class="p">,</span> <span class="s2">&quot;RF&quot;</span><span class="p">,</span> <span class="s2">&quot;SVR&quot;</span><span class="p">]</span>
+<a id="__codelineno-15-17" name="__codelineno-15-17" href="#__codelineno-15-17"></a><span class="n">x1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">y1</span><span class="p">))</span>
+<a id="__codelineno-15-18" name="__codelineno-15-18" href="#__codelineno-15-18"></a>
+<a id="__codelineno-15-19" name="__codelineno-15-19" href="#__codelineno-15-19"></a><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<a id="__codelineno-15-20" name="__codelineno-15-20" href="#__codelineno-15-20"></a><span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">)</span>
+<a id="__codelineno-15-21" name="__codelineno-15-21" href="#__codelineno-15-21"></a><span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">legenda1</span><span class="p">)</span>
+<a id="__codelineno-15-22" name="__codelineno-15-22" href="#__codelineno-15-22"></a><span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+<a id="__codelineno-15-23" name="__codelineno-15-23" href="#__codelineno-15-23"></a><span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;R2 - Base Modificada&#39;</span><span class="p">)</span>
+<a id="__codelineno-15-24" name="__codelineno-15-24" href="#__codelineno-15-24"></a><span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Valores&#39;</span><span class="p">)</span>
+<a id="__codelineno-15-25" name="__codelineno-15-25" href="#__codelineno-15-25"></a>
+<a id="__codelineno-15-26" name="__codelineno-15-26" href="#__codelineno-15-26"></a>
+<a id="__codelineno-15-27" name="__codelineno-15-27" href="#__codelineno-15-27"></a><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div>
+<p><img alt="" src="../diabetes-images/caace505b7fc11721e31b4c9e1cfaa1a986c6b03.jpg" /></p>
+<p><img alt="" src="../diabetes-images/ade65e6e8064bab950db816935c209a4c2f03965.jpg" /></p>
+<h3 id="analise">Análise</h3>
+<p>Percebe-se que modificar a base de dados excluindo três atributos com base em um limiar de correlação com o target não alterou consideravelmente a performance dos algoritmos. Dessa forma, adiante serão avaliados apenas os resultados dos métodos que utilizam a base de dados original.</p>
+<p>Os melhores resultados (i.e. Variância Explicada e R2 mais próximos de 1 e menor MSE) são obtidos ao utilizar Regressão Linear e Random Forest, com o primeiro sendo superior.</p>
+<h2 id="parte-7-influencia-dos-atributos-nos-resultados">PARTE 7: Influência dos atributos nos resultados</h2>
+<p>É de suma importância entender os fatores que influenciaram em um determinado resultado de um método de aprendizado de máquina. Neste projeto, utilizarei o conceito de SHAP Values (SHapley Additive exPlanations) que, resumidamente, analisa a contribuição marginal de cada atributo em cada saída.</p>
+<p><a href="https://towardsdatascience.com/explain-your-model-with-the-shap-values-bc36aac4de3d">Mais sobre</a></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="c1">## Regressão Linear - Base Original</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="n">lin_explainer</span> <span class="o">=</span> <span class="n">shap</span><span class="o">.</span><span class="n">Explainer</span><span class="p">(</span><span class="n">lin</span><span class="o">.</span><span class="n">predict</span><span class="p">,</span> <span class="n">X_train</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="n">lin_shap_values</span> <span class="o">=</span> <span class="n">lin_explainer</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="n">shap</span><span class="o">.</span><span class="n">plots</span><span class="o">.</span><span class="n">beeswarm</span><span class="p">(</span><span class="n">lin_shap_values</span><span class="p">)</span>
+</code></pre></div>
+<p><img alt="" src="../diabetes-images/9c524dd7d4a3884a1de759149ab4cd34c653b628.jpg" /></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="c1">## Árvore de Decisão - Base Original</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="n">ex</span> <span class="o">=</span> <span class="n">shap</span><span class="o">.</span><span class="n">TreeExplainer</span><span class="p">(</span><span class="n">arv_dec</span><span class="p">)</span>
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="n">shap_values</span> <span class="o">=</span> <span class="n">ex</span><span class="o">.</span><span class="n">shap_values</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="n">shap</span><span class="o">.</span><span class="n">summary_plot</span><span class="p">(</span><span class="n">shap_values</span><span class="p">,</span> <span class="n">X_test</span><span class="p">)</span>
+</code></pre></div>
+<p><img alt="" src="../diabetes-images/61fe3097db4e9dce7434d087aa163eadbd12c425.jpg" /></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="c1">## Random Forest - Base Original</span>
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="n">ex</span> <span class="o">=</span> <span class="n">shap</span><span class="o">.</span><span class="n">TreeExplainer</span><span class="p">(</span><span class="n">rf</span><span class="p">)</span>
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="n">shap_values</span> <span class="o">=</span> <span class="n">ex</span><span class="o">.</span><span class="n">shap_values</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="n">shap</span><span class="o">.</span><span class="n">summary_plot</span><span class="p">(</span><span class="n">shap_values</span><span class="p">,</span> <span class="n">X_test</span><span class="p">)</span>
+</code></pre></div>
+<p><img alt="" src="../diabetes-images/668e9c661b6446f3b194ce400e357176da5b4657.jpg" /></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="c1">## SVR - Base Original</span>
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="n">X_train_summary</span> <span class="o">=</span> <span class="n">shap</span><span class="o">.</span><span class="n">kmeans</span><span class="p">(</span><span class="n">X_train</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="n">svm_explainer</span> <span class="o">=</span> <span class="n">shap</span><span class="o">.</span><span class="n">KernelExplainer</span><span class="p">(</span><span class="n">svm</span><span class="o">.</span><span class="n">predict</span><span class="p">,</span> <span class="n">X_train_summary</span><span class="p">)</span>
+<a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="n">svm_shap_values</span> <span class="o">=</span> <span class="n">svm_explainer</span><span class="o">.</span><span class="n">shap_values</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+<a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a><span class="n">shap</span><span class="o">.</span><span class="n">summary_plot</span><span class="p">(</span><span class="n">svm_shap_values</span><span class="p">,</span> <span class="n">X_test</span><span class="p">)</span>
+</code></pre></div>
+<p><img alt="" src="../diabetes-images/52498b028bc898402c916670971f60431fbb9692.jpg" /></p>
+<h2 id="parte-8-discussao">PARTE 8: Discussão</h2>
+<p>Os parâmetros 'bmi' (índice de massa corporal) e 's5' (concentração sérica de triglicerídeos) estão entre os 3 de maior influência nos resultados em todos os algoritmos. De maneira proporcional, quanto maiores 'bmi' e 's5', maiores as chances de progressão da doença.</p>
+<p>A regressão linear foi o único método que considerou o parâmetro 's1' (nível sérico de colesterol total) como o de maior contribuição marginal (quanto maior 's1', menores as chances de progressão da doença). Também é o único que não tem 'bp' (pressão arterial média) entre os 3 parâmetros de maior relevância.</p>
+<p>Importante salientar que os resultados observados utilizando os valores SHAP não necessariamente implicam em causalidade entre os parâmetros e a progressão da doença, essa é uma maneira de observar aquilo que o algoritmo considera como relevante para chegar em um determinado valor de target. Quaisquer afirmações sobre esses relacionamentos devem ser cuidadosas e contar com a colaboração de profissionais da área da saúde.</p>
+
+              
+            </article>
+            
+          </div>
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Voltar ao topo
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+    
+    <nav class="md-footer__inner md-grid" aria-label="Rodapé" >
+      
+        
+        <a href="../fraud-detection/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: Detecção de fraude" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Anterior
+              </span>
+              Detecção de fraude
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../../misc/matlab/" class="md-footer__link md-footer__link--next" aria-label="Próximo: Desenvolvimento de aplicativo no MATLAB" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Próximo
+              </span>
+              Desenvolvimento de aplicativo no MATLAB
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tracking", "navigation.sections", "navigation.indexes", "navigation.top", "navigation.tabs", "navigation.tabs.sticky"], "search": "../../../assets/javascripts/workers/search.b97dbffb.min.js", "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.config.lang": "pt", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Buscar", "search.result.more.one": "Mais 1 nesta p\u00e1gina", "search.result.more.other": "Mais # nesta p\u00e1gina", "search.result.none": "Nenhum resultado encontrado", "search.result.one": "1 resultado encontrado", "search.result.other": "# resultados encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version.title": "Selecione a vers\u00e3o"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.6c7ad80a.min.js"></script>
+      
+    
+  </body>
+</html>
