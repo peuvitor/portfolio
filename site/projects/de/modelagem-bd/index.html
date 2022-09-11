@@ -1,0 +1,754 @@
+
+<!doctype html>
+<html lang="pt" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.3.9">
+    
+    
+      
+        <title>Modelagem de banco de dados - Portfólio de Pedro Lima</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.1d29e8d0.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.cbb835fc.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#4051b5">
+        
+      
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#modelagem-de-banco-de-dados-e-execucao-em-docker" class="md-skip">
+          Ir para o conteúdo
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
+    <a href="../../.." title="Portfólio de Pedro Lima" class="md-header__button md-logo" aria-label="Portfólio de Pedro Lima" data-md-component="logo">
+      
+  <img src="../../../images/monitor.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Portfólio de Pedro Lima
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Modelagem de banco de dados
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Buscar" placeholder="Buscar" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Pesquisar">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Limpar" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando a pesquisa
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Abas" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../.." class="md-tabs__link">
+      Sobre mim
+    </a>
+  </li>
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../" class="md-tabs__link md-tabs__link--active">
+        Projetos
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegação" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Portfólio de Pedro Lima" class="md-nav__button md-logo" aria-label="Portfólio de Pedro Lima" data-md-component="logo">
+      
+  <img src="../../../images/monitor.png" alt="logo">
+
+    </a>
+    Portfólio de Pedro Lima
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Sobre mim
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../">Projetos</a>
+          
+            <label for="__nav_2">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Projetos" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Projetos
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" checked>
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_2">
+          Engenharia de dados
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Engenharia de dados" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          Engenharia de dados
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../etl-aws/" class="md-nav__link">
+        EL na AWS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scraping-jobs/" class="md-nav__link">
+        Raspagem de dados do LinkedIn
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Modelagem de banco de dados
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Modelagem de banco de dados
+      </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="Nesta página">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Nesta página
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#mini-mundo" class="md-nav__link">
+    Mini mundo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modelagem" class="md-nav__link">
+    Modelagem
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gerador-de-massa" class="md-nav__link">
+    Gerador de massa
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#docker" class="md-nav__link">
+    Docker
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" type="checkbox" id="__nav_2_3" >
+      
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_3">
+          Ciência de Dados
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Ciência de Dados" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          Ciência de Dados
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ds/fraud-detection/" class="md-nav__link">
+        Detecção de fraude
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="Nesta página">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Nesta página
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#mini-mundo" class="md-nav__link">
+    Mini mundo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modelagem" class="md-nav__link">
+    Modelagem
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gerador-de-massa" class="md-nav__link">
+    Gerador de massa
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#docker" class="md-nav__link">
+    Docker
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<h1 id="modelagem-de-banco-de-dados-e-execucao-em-docker">Modelagem de banco de dados e execução em docker</h1>
+<p>Atividade proposta durante a participação na trilha de Engenharia de Dados do Programa de Formação em Dados Encantech, realizado durante os meses de Março, Abril e Maio de 2022, em uma parceria entre as Lojas Renner S.A. e a CESAR School.</p>
+<p>Consiste na modelagem de um banco de dados, da criação de um gerador de massa e da execução em um docker container.</p>
+<p><a href="https://github.com/peuvitor/modelagem-banco-de-dados-e-docker">acesso aos arquivos</a></p>
+<h2 id="mini-mundo">Mini mundo</h2>
+<p>Uma faculdade contratou você como engenheiro de dados e pediu seu apoio para a construção de um modelo de banco de dados para gerenciar seus funcionários, divididos entre administrativos e professores, permitindo também alocar um professor por matéria por semestre, permitindo assim a rotação entre os professores durante os semestres.</p>
+<p>O sistema também deve registrar os dados de matrícula dos alunos, o ano letivo e suas matérias que serão cursadas por semestre, vinculando aos professores que irão ministrar aulas nesse período.</p>
+<p>Os dados referentes aos alunos devem conter sua filiação, sua data de nascimento, endereço completo, telefone para contato, e-mail e seu histórico de notas por matérias.</p>
+<h2 id="modelagem">Modelagem</h2>
+<p>O modelo desenvolvido visa garantir que os requisitos do mini mundo sejam respeitados, mas vai além, considerando outras relações existentes quando se fala de uma faculdade. Vale considerar que a normalização do banco de dados também foi levada em conta.</p>
+<ul>
+<li>Modelo conceitual:</li>
+</ul>
+<p><img alt="" src="https://github.com/peuvitor/modelagem-banco-de-dados-e-docker/blob/main/modelagem-banco-de-dados/modelo-relacional.jpg?raw=true" /></p>
+<ul>
+<li>Modelo lógico:</li>
+</ul>
+<p><img alt="" src="https://github.com/peuvitor/modelagem-banco-de-dados-e-docker/blob/main/modelagem-banco-de-dados/modelo-logico.png?raw=true" /></p>
+<ul>
+<li><a href="https://github.com/peuvitor/modelagem-banco-de-dados-e-docker/blob/main/scripts_sql/DDL_FACULDADE.sql">Modelo físico</a>: gerado a partir do MySQL Workbench.</li>
+</ul>
+<h2 id="gerador-de-massa">Gerador de massa</h2>
+<p>O modelo criado conta com um total de 26 tabelas. Para gerar um script capaz de popular todo o banco de dados, a estratégia foi popular as tabelas seguindo a ordem abaixo, pois como há cruzamentos de informações, é necessário garantir que não haverá problemas de dependência.</p>
+<ol>
+<li>
+<p>tabelas de domínio (exemplos: CIDADE, DEPARTAMENTO);</p>
+</li>
+<li>
+<p>tabelas que dependem apenas das tabelas de domínio (exemplo: PESSOA);</p>
+</li>
+<li>
+<p>tabelas de especializações (exemplos: ALUNO, PROFESSOR);</p>
+</li>
+<li>
+<p>tabelas de relacionamentos (exemplo: AULA).</p>
+</li>
+</ol>
+<p>Para tal, os arquivos de suporte foram: <a href="https://github.com/peuvitor/modelagem-banco-de-dados-e-docker/blob/main/gerador-de-massa/nomes.txt">lista de nomes</a> (30 nomes), <a href="https://github.com/peuvitor/modelagem-banco-de-dados-e-docker/blob/main/gerador-de-massa/sobrenomes.txt">lista de sobrenomes</a> (434 sobrenomes) e <a href="https://github.com/peuvitor/modelagem-banco-de-dados-e-docker/blob/main/gerador-de-massa/ceps.txt">lista de CEPs válidos</a> (732.763 CEPs, contendo rua, número, bairro, cidade, estado). A partir desses arquivos, diversas combinações foram geradas, permitindo a população do banco completo sem replicar registros.</p>
+<p>As tabelas de domínio que precisam de mais informações foram definidas manualmente:</p>
+<ul>
+<li>
+<p>STATUS_ALUNO: </p>
+<p>["Cursando", "Trancado", "Formado", "Jubilado"]</p>
+</li>
+<li>
+<p>STATUS_FUNCIONARIO: </p>
+<p>["Ativo", "Desligado", "Férias", "Afastado"]</p>
+</li>
+<li>
+<p>TITULACAO: </p>
+<p>["Graduado", "Especialista", "Mestre", "Doutor"]</p>
+</li>
+<li>
+<p>SETOR: </p>
+<p>["Secretariado", "Coordenação", "Biblioteca", "Facilities"]</p>
+</li>
+<li>
+<p>TURNO: </p>
+<p>["Matutino", "Vespertino", "Noturno", "Integral"]</p>
+</li>
+<li>
+<p>TIPO_AVALIACAO: </p>
+<p>["Prova 1", "Prova 2", "Prova 3", "Prova de Recuperação", "Prova de Final"]</p>
+</li>
+<li>
+<p>DEPARTAMENTO: </p>
+<p>["DADOS", "EXATAS", "BIOLOGICAS", "HUMANAS E SOCIAIS", "ARTES", "LINGUAS"]</p>
+</li>
+<li>
+<p>CURSO_GRADUACAO: </p>
+<p>["Engenharia de Dados", "Ciência de Dados", "Análise de Dados", "Engenharias de Machine Learning", "Estatística", "Matemática", "Física", "Química", "Biologia", "Medicina", "Enfermagem", "Fisioterapia", "Filosofia", "Administração", "Sociologia", "Pedagogia", "Artes Cênicas", "Música", "Turismo", "Artes Visuais", "Português", "Linguas Estrangeiras", "Linguas Clássicas", "Filologia"]</p>
+</li>
+</ul>
+<p>O <a href="https://github.com/peuvitor/modelagem-banco-de-dados-e-docker/blob/main/gerador-de-massa/GERADOR-MASSA.ipynb">script desenvolvido em python</a> cria o DML em SQL para cada uma das tabelas, abaixo um exemplo do que foi feito para a tabela STATUS_FUNCIONARIO:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;INSERTS_FACULDADE_DOMINIOS/STATUS_FUNCIONARIO.sql&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    <span class="n">ID_STATUS_LIST</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    <span class="n">DESCRICAO_STATUS_LIST</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Ativo&quot;</span><span class="p">,</span> <span class="s2">&quot;Desligado&quot;</span><span class="p">,</span> <span class="s2">&quot;Férias&quot;</span><span class="p">,</span> <span class="s2">&quot;Afastado&quot;</span><span class="p">]</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">ID_STATUS_LIST</span><span class="p">)):</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>        <span class="n">ID_STATUS</span> <span class="o">=</span> <span class="n">ID_STATUS_LIST</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>        <span class="n">DESCRICAO_STATUS</span> <span class="o">=</span> <span class="n">DESCRICAO_STATUS_LIST</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>        <span class="n">sql</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;INSERT INTO STATUS_FUNCIONARIO (ID_STATUS, DESCRICAO_STATUS) VALUES (</span><span class="si">{</span><span class="n">ID_STATUS</span><span class="si">}</span><span class="s1">, &quot;</span><span class="si">{</span><span class="n">DESCRICAO_STATUS</span><span class="si">}</span><span class="s1">&quot;)&#39;</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">sql</span> <span class="o">+</span> <span class="s2">&quot;;&quot;</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p>No final, as instruções de inserção foram divididas em dois arquivos: <a href="https://github.com/peuvitor/modelagem-banco-de-dados-e-docker/blob/main/scripts_sql/DML_TABELAS_DOMINIO.SQL">popular tabelas de domínio</a> e <a href="https://github.com/peuvitor/modelagem-banco-de-dados-e-docker/blob/main/scripts_sql/DML_MASSA.SQL">popuplar tabelas fato</a>.</p>
+<h2 id="docker">Docker</h2>
+<p>Agora com os scripts de DDL e DML em mãos, o banco de dados será executado um docker a partir de uma imagem do SGBD MariaDB.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;3.1&#39;</span><span class="w"></span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="nt">services</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">  </span><span class="nt">database</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mariadb</span><span class="w"></span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">    </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mariadb-bd</span><span class="w"></span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">    </span><span class="nt">environment</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MARIADB_ROOT_PASSWORD=password</span><span class="w"></span>
+</code></pre></div>
+<p>Após subir o container, basta executar os scripts de DDL e DML na ordem abaixo. Com isso, chegamos em uma simulação de um banco de dados em operação.</p>
+<ol>
+<li>
+<p>definição do banco de dados: scripts_sql/DDL_FACULDADE.sql</p>
+</li>
+<li>
+<p>popular tabelas de domínio: scripts_sql/DML_TABELAS_DOMINIO.sql</p>
+</li>
+<li>
+<p>popular tabelas fato: scripts_sql/DML_MASSA.sql</p>
+</li>
+</ol>
+
+              
+            </article>
+            
+          </div>
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Voltar ao topo
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+    
+    <nav class="md-footer__inner md-grid" aria-label="Rodapé" >
+      
+        
+        <a href="../scraping-jobs/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: Raspagem de dados do LinkedIn" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Anterior
+              </span>
+              Raspagem de dados do LinkedIn
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../../ds/fraud-detection/" class="md-footer__link md-footer__link--next" aria-label="Próximo: Detecção de fraude" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Próximo
+              </span>
+              Detecção de fraude
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tracking", "navigation.sections", "navigation.indexes", "navigation.top", "navigation.tabs", "navigation.tabs.sticky"], "search": "../../../assets/javascripts/workers/search.b97dbffb.min.js", "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.config.lang": "pt", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Buscar", "search.result.more.one": "Mais 1 nesta p\u00e1gina", "search.result.more.other": "Mais # nesta p\u00e1gina", "search.result.none": "Nenhum resultado encontrado", "search.result.one": "1 resultado encontrado", "search.result.other": "# resultados encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version.title": "Selecione a vers\u00e3o"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.6c7ad80a.min.js"></script>
+      
+    
+  </body>
+</html>

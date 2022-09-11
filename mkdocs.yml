@@ -37,6 +37,8 @@ nav:
       - Modelagem de banco de dados: projects/de/modelagem-bd.md
     - Ciência de Dados:
       - Detecção de fraude: projects/ds/fraud-detection.md
+    - Diversos:
+      - Desenvolvimento de aplicativo no MATLAB: projects/misc/matlab.md
 
 
 
