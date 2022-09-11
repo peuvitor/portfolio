@@ -34,6 +34,7 @@ nav:
     - Engenharia de dados:
       - EL na AWS: projects/de/etl-aws.md
       - Raspagem de dados do LinkedIn: projects/de/scraping-jobs.md
+      - Modelagem de banco de dados: projects/de/modelagem-bd.md
     - Ciência de Dados:
       - Detecção de fraude: projects/ds/fraud-detection.md
 

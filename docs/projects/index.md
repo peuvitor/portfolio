@@ -10,6 +10,10 @@ Construção de uma pipeline com estágios de extração de dados e de carregame
 
 Extrair periodicamente do LinkedIn as vagas abertas para um determinado cargo e local de trabalho e salvar os detalhes de cada uma delas em uma planilha do Google Sheets.
 
+[Modelagem de banco de dados](./de/modelagem-bd.md)
+
+Modelar um banco de dados, criar um gerador de massa e executá-lo em docker.
+
 ## Ciência de dados
 
 [Detecção de fraude em seguro de veículo](./ds/fraud-detection.md)
