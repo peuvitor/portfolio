@@ -7,7 +7,7 @@ hide:
 
 O aplicativo foi construído no Trabalho de Conclusão de Curso de Engenharia de Controle e Automação, da Universidade Federal de Pernambuco. O controlador repetitivo utilizado como base do aplicativo é proposto na tese de doutorado de [Rafael Cavalcanti Neto](https://scholar.google.com/citations?hl=pt-BR&user=BPnQFyUAAAAJ). 
 
-No [repositório](https://github.com/peuvitor/repetitive-controller-designer) é possível ter acesso tanto aos scripts desenvolvidos, quanto aos documentos de referência. O aplicativo também está [disponível no site oficial da MathWorks](https://www.mathworks.com/matlabcentral/fileexchange/74759-repetitive-controller-designer).
+No [repositório](https://github.com/peuvitor/repetitive-controller-designer) é possível ter acesso aos scripts desenvolvidos. O aplicativo também está [disponível no site oficial da MathWorks](https://www.mathworks.com/matlabcentral/fileexchange/74759-repetitive-controller-designer).
 
 ## Compatibilidade entre versões
 
@@ -21,7 +21,7 @@ Nesta etapa define-se a planta a ser controlada. Em (1), é ilustrado o diagrama
 
 Para a planta, duas abordagens são possíveis: digitar manualmente os parâmetros da planta (3) ou escolher uma variável já definida no workspace do MATLAB (4). Apenas após o botão OK (5) ser pressionado, os dois botões presentes em (6) são habilitados, permitindo ao usuário a análise de estabilidade do sistema (botão System Stability) ou o dimenionamento de um filtro ideal (botão Filter Design). Apertar o botão em (7) abre uma página onde é possível encontrar informações a respeito da criação da ferramenta e um pequeno resumo de seu funcionamento.
 
-![](https://github.com/peuvitor/repetitive-controller-designer/blob/master/images/main.PNG?raw=true)
+![image](https://drive.google.com/uc?export=view&id=1ndzOjbVY1jx10e3BlGFHJnYwjrhIRClH)
 
 ### Análise de estabilidade
 
@@ -31,13 +31,13 @@ São dadas duas possibilidades ao usuário para observar a influência desses do
 
 Caso alguma configuração seja útil ao usuário, em (4) é possível fazer uma captura de tal gráfico e escolher o local onde se deseja salvar a imagem gerada. São também disponibilizados alguns recursos do próprio MATLAB para que o usuário possa analisar o gráfico gerado (5), como aplicar ou remover zoom, ver os valores em determinados pontos das curvas e realizar translação do gráfico. Ainda, em (6), é possível ajustar os parâmetros dos sliders (passo e limites máximo e mínimo) e das caixas de textos disponíveis para escolha dos valores (resolução para arredondamento), e também configurar os limites mínimos e máximos dos eixos do gráfico.
 
-![](https://github.com/peuvitor/repetitive-controller-designer/blob/master/images/controlador.PNG?raw=true)
+![image](https://drive.google.com/uc?export=view&id=1rfaeBZOQ9vwvFshEwh_v82JlrRM9bMVQ)
 
-![](https://github.com/peuvitor/repetitive-controller-designer/blob/master/images/controlador_config.png?raw=true)
+![image](https://drive.google.com/uc?export=view&id=1VI5S8Iod3gUluMHvCAEbrt6m1BYeFpPd)
 
-![](https://github.com/peuvitor/repetitive-controller-designer/blob/master/images/controlador_config_param.PNG?raw=true)
+![image](https://drive.google.com/uc?export=view&id=1De9EwUqogvhw2NSvAqCnTqUfJyNAMXU0)
 
-![](https://github.com/peuvitor/repetitive-controller-designer/blob/master/images/controlador_config_plot.PNG?raw=true)
+![image](https://drive.google.com/uc?export=view&id=1tsjMQ4OfWA5O4yD4I9Pkz46ytxHQjlab)
 
 ### Dimensionamento do filtro
 
@@ -45,7 +45,7 @@ Apertar o botão 'Filter Design' na janela inicial possibilita a execução de u
 
 Para executar o algoritmo (1), é requerido a definição de alguns valores. A curva resultante do algoritmo é apresentada em (2) e se refere ao comportamento do filtro ideal a ser utilizado em tal aplicação. Em (3), são mostradas a ordem e a frequência de corte correspondentes. Por fim, ainda é possível extrair os pontos que geraram o gráfico, além dos valores de ordem e frequência de corte do filtro, ao clicar no botão 'Export data to workspace...' (4).
 
-![](https://github.com/peuvitor/repetitive-controller-designer/blob/master/images/filtro.PNG?raw=true)
+![image](https://drive.google.com/uc?export=view&id=16KP4EsKe-fhoDDQpidC2C54JmkTxYNaK)
 
 ## Desenvolvimento
 
@@ -252,4 +252,4 @@ end % end function
 
 #### Fluxograma correspondente ao algoritmo
 
-![](https://github.com/peuvitor/repetitive-controller-designer/blob/master/images/algo_filtro.PNG?raw=true)
+![image](https://drive.google.com/uc?export=view&id=1dmUxKuHSDZMCvmhAw8C760EKo954kxMf)
